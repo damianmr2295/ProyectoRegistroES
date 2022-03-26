@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import java.time.LocalDate;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -32,16 +33,16 @@ public class Horario {
     @Schema(description = "Hora de inicio del trabajador en el horario", example = "08:00h", required = true)
     @NotBlank
     @Column
-    private String horaInicio;
+    private List<String> horaInicio;
 
     @Schema(description = "Hora final del trabajador en el horario", example = "14:00h", required = true)
     @NotBlank
     @Column
-    private String horaFin;
+    private List<String> horaFin;
 
     @Schema(description = "Fichaje del trabajador en el horario", example = "E08:00h, S14:00h", required = true)
     @NotBlank
     @Column
-    private String Fichado;
+    private List<String> Fichado;
 
 }

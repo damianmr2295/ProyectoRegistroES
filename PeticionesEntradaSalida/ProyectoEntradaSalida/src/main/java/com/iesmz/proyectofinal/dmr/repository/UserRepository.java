@@ -1,4 +1,6 @@
 package com.iesmz.proyectofinal.dmr.repository;
 
-public interface UserRepository {
+import org.springframework.data.repository.CrudRepository;
+
+public interface UserRepository extends CrudRepository {
 }
