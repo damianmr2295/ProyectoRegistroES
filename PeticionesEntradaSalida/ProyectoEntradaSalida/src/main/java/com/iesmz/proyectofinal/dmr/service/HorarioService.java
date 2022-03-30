@@ -7,4 +7,6 @@ import java.util.Set;
 public interface HorarioService {
 
     Set<Horario> findAll();
+    //Optional<Horario> findById(long id);
+    Set<Horario> findByCurso(String curso);
 }

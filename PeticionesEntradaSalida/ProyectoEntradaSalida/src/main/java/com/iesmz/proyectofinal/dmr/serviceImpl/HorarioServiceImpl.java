@@ -19,4 +19,9 @@ public class HorarioServiceImpl implements HorarioService {
     public Set<Horario> findAll() {
         return horarioRepository.findAll();
     }
+
+    @Override
+    public Set<Horario> findByCurso(String curso) {
+        return horarioRepository.findByCurso(curso);
+    }
 }

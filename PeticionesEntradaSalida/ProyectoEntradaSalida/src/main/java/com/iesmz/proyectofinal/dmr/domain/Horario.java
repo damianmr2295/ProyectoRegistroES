@@ -9,6 +9,7 @@ import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Set;
 
 @Data
 @AllArgsConstructor
@@ -30,7 +31,7 @@ public class Horario {
     @Column
     private String diaSemana;
 
-    @Schema(description = "Hora de inicio del trabajador en el horario", example = "08:00h", required = true)
+    /*@Schema(description = "Hora de inicio del trabajador en el horario", example = "08:00h", required = true)
     @NotBlank
     @Column
     private List<String> horaInicio;
@@ -38,11 +39,11 @@ public class Horario {
     @Schema(description = "Hora final del trabajador en el horario", example = "14:00h", required = true)
     @NotBlank
     @Column
-    private List<String> horaFin;
+    private List<String> horaFin;*/
 
-    @Schema(description = "Fichaje del trabajador en el horario", example = "E08:00h, S14:00h", required = true)
+    /*@Schema(description = "Fichaje del trabajador en el horario", example = "E08:00h S14:00h", required = true)
     @NotBlank
     @Column
-    private List<String> Fichado;
+    private Set<String> Fichado;*/
 
 }

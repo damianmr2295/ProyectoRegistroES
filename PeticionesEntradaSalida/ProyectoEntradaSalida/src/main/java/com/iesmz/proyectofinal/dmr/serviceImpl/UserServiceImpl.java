@@ -1,10 +1,33 @@
 package com.iesmz.proyectofinal.dmr.serviceImpl;
 
+import com.iesmz.proyectofinal.dmr.domain.User;
+import com.iesmz.proyectofinal.dmr.repository.UserRepository;
+import com.iesmz.proyectofinal.dmr.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.Optional;
+import java.util.Set;
 
 @Service
 @Transactional
-public class UserServiceImpl {
+public class UserServiceImpl implements UserService {
+    @Autowired
+    private UserRepository userRepository;
+
+    @Override
+    public Set<User> findAll() {
+        return userRepository.findAll();
+    }
+
+    @Override
+    public Optional<User> findById(long id) {
+        return userRepository.findById(id);
+    }
+
+    @Override
+    public Set<User> findByNombre(String nombre) {
+        return userRepository.findByNombre(nombre);
+    }
 }
