@@ -7,12 +7,12 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
-import java.time.LocalDate;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity(name = "User")
+@Entity(name = "user")
 public class User {
 
 
@@ -24,7 +24,7 @@ public class User {
     @NotBlank
     @Column
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long idUser;
 
     @Schema(description = "Nombre del trabajador/usuario", example ="Pepe", required = true)
     @NotBlank
@@ -40,4 +40,13 @@ public class User {
     @NotBlank
     @Column
     private String password;
+
+    @ManyToOne
+    @JoinColumn(name="idDepartamento")
+    private Departamento departamento;
+
+    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
+    private List<Horario> horarios;
+
+
 }

@@ -1,5 +1,6 @@
 package com.iesmz.proyectofinal.dmr.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -7,43 +8,46 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
-import java.time.LocalDate;
-import java.util.List;
-import java.util.Set;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity(name = "Horario")
+@Entity(name = "horario")
 public class Horario {
 
-    @Schema(description = "Curso del horario", example = "2DAM", required = true)
+    @Schema(description = "id del horario", example = "1", required = true)
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long idHorario;
+
+    @Schema(description = "Curso del horario", example = "2DAM", required = true)
+    @NotBlank
+    @Column
     private String curso;
 
-    @Schema(description = "Fecha del horario", example ="26/05/2022", required = true)
+    @Schema(description = "Dia de la semana del horario", example = "1", required = true)
     @NotBlank
     @Column
-    private LocalDate fecha;
+    private int diaSemana; //el dia de la semana será del 1 al 5
 
-    @Schema(description = "Dia de la semanal del horario", example = "Viernes", required = true)
+    @Schema(description = "Hora de inicio del trabajador en el horario", example = "08:00h", required = true)
     @NotBlank
     @Column
-    private String diaSemana;
-
-    /*@Schema(description = "Hora de inicio del trabajador en el horario", example = "08:00h", required = true)
-    @NotBlank
-    @Column
-    private List<String> horaInicio;
+    private String horaInicio;
 
     @Schema(description = "Hora final del trabajador en el horario", example = "14:00h", required = true)
     @NotBlank
     @Column
-    private List<String> horaFin;*/
+    private String horaFin;
 
-    /*@Schema(description = "Fichaje del trabajador en el horario", example = "E08:00h S14:00h", required = true)
-    @NotBlank
-    @Column
-    private Set<String> Fichado;*/
+    @ManyToOne
+    @JoinColumn(name="dni")
+    private User user;
 
+    @ManyToOne
+    @JoinColumn(name="idAula")
+    private Aula aula;
+
+    @OneToOne(mappedBy = "horario",fetch = FetchType.LAZY)
+    private Fichas fichas;
 }

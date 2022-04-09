@@ -30,7 +30,7 @@ public class HorarioController {
                     content = @Content(schema = @Schema(implementation =
                             Horario.class)))
     })
-    @GetMapping( value = "/departamento", produces = "application/json")
+    @GetMapping( value = "/horario", produces = "application/json")
     public ResponseEntity<Set<Horario>> getAllHorario() {
         Set<Horario> horario=null;
         horario = horarioService.findAll();

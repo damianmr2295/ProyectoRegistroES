@@ -7,23 +7,25 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import java.util.List;
 
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity(name = "Aula")
+@Entity(name = "aula")
 public class Aula {
 
     @Schema(description = "Id del aula", example = "1", required = true)
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private long idAula;
 
     @Schema(description = "Nombre del aula", example ="Info 1", required = true)
     @NotBlank
     @Column
     private String nombre;
 
-
+    @OneToMany(mappedBy = "aula", fetch = FetchType.LAZY)
+    private List<Horario> horarios;
 }
