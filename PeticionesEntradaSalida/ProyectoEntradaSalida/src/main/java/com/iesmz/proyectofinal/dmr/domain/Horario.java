@@ -41,7 +41,7 @@ public class Horario {
     private String horaFin;
 
     @ManyToOne
-    @JoinColumn(name="dni")
+    @JoinColumn(name="idUser")
     private User user;
 
     @ManyToOne
