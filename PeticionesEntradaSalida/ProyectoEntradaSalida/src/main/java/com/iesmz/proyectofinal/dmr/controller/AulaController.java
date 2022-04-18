@@ -8,17 +8,17 @@ import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Set;
 
 
 @RestController
+@Tag(name = "Aula", description = "Catálogo de aulas")
 public class AulaController {
     @Autowired
     private AulaService aulaService;
@@ -55,4 +55,19 @@ public class AulaController {
         aula = aulaService.findAll();
         return new ResponseEntity<>(aula, HttpStatus.OK);
     }
+    @Operation(summary = "Elimina un aula por su id")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Existe el aula con ese codMesa", content = @Content(schema = @Schema(implementation =
+                    Aula.class))),
+            @ApiResponse(responseCode = "404", description = "El aula no existe", content = @Content(schema = @Schema(implementation =
+                    Response.class)))
+    })
+
+    @DeleteMapping("/borrar/aula/{idAula}")
+    public ResponseEntity<com.iesmz.proyectofinal.dmr.controller.Response> deleteComanda(@PathVariable long idAula) {
+        aulaService.deleteByIdAula(idAula);
+        return new ResponseEntity<>(com.iesmz.proyectofinal.dmr.controller.Response.noErrorResponse(), HttpStatus.OK);
+    }
+
+
 }

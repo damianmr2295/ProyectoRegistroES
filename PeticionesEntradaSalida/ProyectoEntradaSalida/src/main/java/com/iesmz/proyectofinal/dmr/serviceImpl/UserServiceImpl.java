@@ -27,6 +27,11 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public Set<User> findByDni(String dni) {
+        return userRepository.findByDni(dni);
+    }
+
+    @Override
     public Set<User> findByNombre(String nombre) {
         return userRepository.findByNombre(nombre);
     }

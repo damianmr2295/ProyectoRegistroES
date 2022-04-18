@@ -8,5 +8,6 @@ import java.util.Set;
 public interface UserService {
     Set<User> findAll();
     Optional<User> findById(long id);
+    Set<User> findByDni(String dni);
     Set<User> findByNombre(String nombre);
 }

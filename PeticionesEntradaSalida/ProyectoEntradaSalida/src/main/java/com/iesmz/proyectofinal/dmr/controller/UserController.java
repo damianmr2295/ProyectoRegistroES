@@ -13,9 +13,11 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Set;
-
+@RestController
 public class UserController {
 
     @Autowired
@@ -30,14 +32,32 @@ public class UserController {
                     content = @Content(schema = @Schema(implementation =
                             User.class)))
     })
-    @GetMapping( value = "/user/{id}", produces = "application/json")
+    @GetMapping( value = "/user/id/{id}", produces = "application/json")
     public ResponseEntity<User> getUser(@PathVariable long id) {
 
         User user = userService.findById(id)
                 .orElseThrow(() -> new UserNotFoundException(id));
         return new ResponseEntity<User>(user, HttpStatus.OK);
     }
-
+    @Operation(summary="Obtiene un usuario por su DNI")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "600", description = "El usuario existe",
+                    content = @Content(schema = @Schema(implementation =
+                            User.class))),
+            @ApiResponse(responseCode = "404", description = "El usuario no existe",
+                    content = @Content(schema = @Schema(implementation =
+                            User.class)))
+    })
+    @GetMapping( value = "/user/dni/{dni}", produces = "application/json")
+    public ResponseEntity<Set<User>> getUserDni(@RequestParam(value =
+            "dni", defaultValue = "") String dni) {
+        Set<User> user = null;
+        if (dni.equals(""))
+            user = userService.findAll();
+        else
+            user = userService.findByDni(dni);
+        return new ResponseEntity<>(user, HttpStatus.OK);
+    }
     @Operation(summary = "Obtiene todos los user")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "600", description = "El user existe",

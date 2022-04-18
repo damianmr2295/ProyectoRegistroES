@@ -9,5 +9,6 @@ import java.util.Set;
 public interface UserRepository extends CrudRepository<User, Long> {
     Set<User> findAll();
     Optional<User> findById(long id);
+    Set<User> findByDni(String dni);
     Set<User> findByNombre(String nombre);
 }

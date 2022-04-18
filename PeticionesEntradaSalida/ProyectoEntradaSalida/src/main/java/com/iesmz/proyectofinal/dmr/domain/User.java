@@ -15,16 +15,15 @@ import java.util.List;
 @Entity(name = "user")
 public class User {
 
+    @Schema(description = "id del trabajador/usuario", example ="1", required = true)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long idUser;
 
     @Schema(description = "DNI del trabajador/usuario", example = "78965428N", required = true)
-    @Id
-    private String dni;
-
-    @Schema(description = "id del trabajador/usuario", example ="00001", required = true)
     @NotBlank
     @Column
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idUser;
+    private String dni;
 
     @Schema(description = "Nombre del trabajador/usuario", example ="Pepe", required = true)
     @NotBlank

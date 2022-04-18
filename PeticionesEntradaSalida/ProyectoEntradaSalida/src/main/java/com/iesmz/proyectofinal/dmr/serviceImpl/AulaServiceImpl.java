@@ -29,4 +29,10 @@ public class AulaServiceImpl implements AulaService {
     public Set<Aula> findByNombre(String nombre) {
         return aulaRepository.findByNombre(nombre);
     }
+
+    @Override
+    public void deleteByIdAula(long idAula) {
+        aulaRepository.findById(idAula);
+        aulaRepository.deleteByIdAula(idAula);
+    }
 }

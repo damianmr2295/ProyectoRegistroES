@@ -1,7 +1,6 @@
 package com.iesmz.proyectofinal.dmr.repository;
 
 import com.iesmz.proyectofinal.dmr.domain.Aula;
-import com.iesmz.proyectofinal.dmr.domain.Departamento;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.Optional;
@@ -11,4 +10,6 @@ public interface AulaRepository  extends CrudRepository<Aula, Long> {
     Set<Aula> findAll();
     Optional<Aula> findById(long id);
     Set<Aula> findByNombre(String nombre);
+    void deleteByIdAula(long idAula);
+
 }

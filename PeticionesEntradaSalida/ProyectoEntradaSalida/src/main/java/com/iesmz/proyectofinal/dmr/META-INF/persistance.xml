@@ -8,6 +8,7 @@
 
         <class>domain.Aula</class>
         <class>domain.Departamento</class>
+        <class>domain.Fichas</class>
         <class>domain.Horario</class>
         <class>domain.User</class>
 
