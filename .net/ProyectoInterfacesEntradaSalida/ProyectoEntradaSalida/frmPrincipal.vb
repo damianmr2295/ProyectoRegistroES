@@ -8,4 +8,9 @@
         frmPrincipal.ActiveForm.Hide()
         frmFichar.Show()
     End Sub
+
+    Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
+        frmPrincipal.ActiveForm.Hide()
+        frmBuscar.Show()
+    End Sub
 End Class

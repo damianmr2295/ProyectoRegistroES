@@ -13,3 +13,9 @@ C:\Users\Damian\Desktop\RepositorioGit\ProyectoRegistro\.net\ProyectoInterfacesE
 C:\Users\Damian\Desktop\RepositorioGit\ProyectoRegistro\.net\ProyectoInterfacesEntradaSalida\ProyectoEntradaSalida\obj\Debug\ProyectoEntradaSalida.frmLogin.resources
 C:\Users\Damian\Desktop\RepositorioGit\ProyectoRegistro\.net\ProyectoInterfacesEntradaSalida\ProyectoEntradaSalida\obj\Debug\ProyectoEntradaSalida.frmPrincipal.resources
 C:\Users\Damian\Desktop\RepositorioGit\ProyectoRegistro\.net\ProyectoInterfacesEntradaSalida\ProyectoEntradaSalida\obj\Debug\ProyectoEntradaSalida.frmFichar.resources
+C:\Users\Damian\Desktop\RepositorioGit\ProyectoRegistro\.net\ProyectoInterfacesEntradaSalida\ProyectoEntradaSalida\obj\Debug\ProyectoEntradaSalida.frmBuscar.resources
+C:\Users\Damian\Desktop\RepositorioGit\ProyectoRegistro\.net\ProyectoInterfacesEntradaSalida\ProyectoEntradaSalida\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Damian\Desktop\RepositorioGit\ProyectoRegistro\.net\ProyectoInterfacesEntradaSalida\ProyectoEntradaSalida\bin\Debug\RestSharp.dll
+C:\Users\Damian\Desktop\RepositorioGit\ProyectoRegistro\.net\ProyectoInterfacesEntradaSalida\ProyectoEntradaSalida\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Damian\Desktop\RepositorioGit\ProyectoRegistro\.net\ProyectoInterfacesEntradaSalida\ProyectoEntradaSalida\bin\Debug\RestSharp.xml
+C:\Users\Damian\Desktop\RepositorioGit\ProyectoRegistro\.net\ProyectoInterfacesEntradaSalida\ProyectoEntradaSalida\obj\Debug\ProyectoEntradaSalida.vbproj.CopyComplete
