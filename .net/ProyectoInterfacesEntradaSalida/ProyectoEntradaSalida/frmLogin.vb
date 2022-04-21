@@ -1,26 +1,28 @@
 ﻿Imports Newtonsoft.Json
 
 Public Class frmLogin
+    Dim restApi = New RestAPI
     Private Sub btnIniciarSesion_Click(sender As Object, e As EventArgs) Handles btnIniciarSesion.Click
-        Dim api = New DBApi
-        Dim url = "http://localhost:8080/user/1"
-        Dim headers = New List(Of Parametro)
-        Dim parametros = New List(Of Parametro)
+        Dim user = restApi.userDni()
+        Try
+            If user Is Nothing Then
+                MessageBox.Show("Usuario o contraseña incorrecta")
+            Else
+                If user.password.Equals(txtContrasenya.Text) Then
+                    frmLogin.ActiveForm.Hide()
+                    frmPrincipal.Show()
+                Else
+                    MessageBox.Show("Usuario o contraseña incorrecta")
+                End If
 
-        Dim response = api.MGet(url, headers, parametros)
+            End If
+        Catch
+            MessageBox.Show("Usuario o contraseña incorrecta")
+        End Try
+    End Sub
 
-        Dim objeto = JsonConvert.DeserializeObject(Of User)(response)
+    Private Sub frmLogin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        MessageBox.Show("Persona id " + objeto.nombre)
-
-        frmLogin.ActiveForm.Hide()
-        frmPrincipal.Show()
     End Sub
 End Class
 
-Class User
-    Public Property id As Long
-    Public Property dni As String
-    Public Property nombre As String
-
-End Class

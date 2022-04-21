@@ -1,9 +1,7 @@
 package com.iesmz.proyectofinal.dmr.domain;
 
 import io.swagger.v3.oas.annotations.media.Schema;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -11,13 +9,14 @@ import java.time.LocalDate;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity(name = "fichas")
-public class Fichas {
+@Entity(name = "ficha")
+public class Ficha {
 
     @Schema(description = "id de los fichajes", example = "1", required = true)
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long idFichas;
+    @Column(name ="idFicha")
+    private long idFicha;
 
     @Schema(description = "Fecha en la que se realiza el fichaje", example = "12/10/2021",
             required = true)
@@ -29,7 +28,7 @@ public class Fichas {
     @Column
     private boolean fichado;
 
-    @OneToOne(cascade = {CascadeType.ALL})
-    @JoinColumn(name="idHorario")
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "idHorario", referencedColumnName = "idHorario")
     private Horario horario;
 }

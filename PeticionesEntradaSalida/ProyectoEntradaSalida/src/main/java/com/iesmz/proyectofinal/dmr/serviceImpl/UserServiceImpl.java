@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
@@ -27,12 +28,12 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public Set<User> findByDni(String dni) {
+    public User findByDni(String dni) {
         return userRepository.findByDni(dni);
     }
 
     @Override
-    public Set<User> findByNombre(String nombre) {
+    public List<User> findByNombre(String nombre) {
         return userRepository.findByNombre(nombre);
     }
 }

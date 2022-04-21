@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -26,6 +27,7 @@ public class Aula {
     @Column
     private String nombre;
 
-    @OneToMany(mappedBy = "aula", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "aula", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Horario> horarios;
+
 }

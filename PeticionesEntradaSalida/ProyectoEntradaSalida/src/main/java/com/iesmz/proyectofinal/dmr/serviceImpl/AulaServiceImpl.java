@@ -26,7 +26,7 @@ public class AulaServiceImpl implements AulaService {
         return aulaRepository.findById(id);
     }
     @Override
-    public Set<Aula> findByNombre(String nombre) {
+    public Aula findByNombre(String nombre) {
         return aulaRepository.findByNombre(nombre);
     }
 

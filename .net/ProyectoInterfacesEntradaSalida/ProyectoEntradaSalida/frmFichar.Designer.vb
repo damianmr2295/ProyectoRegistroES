@@ -86,42 +86,42 @@ Partial Class frmFichar
         'labelIniFinAula3
         '
         Me.labelIniFinAula3.AutoSize = True
-        Me.labelIniFinAula3.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.labelIniFinAula3.BackColor = System.Drawing.SystemColors.Control
         Me.labelIniFinAula3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labelIniFinAula3.Location = New System.Drawing.Point(64, 254)
+        Me.labelIniFinAula3.Location = New System.Drawing.Point(31, 251)
         Me.labelIniFinAula3.Name = "labelIniFinAula3"
-        Me.labelIniFinAula3.Size = New System.Drawing.Size(195, 20)
+        Me.labelIniFinAula3.Size = New System.Drawing.Size(21, 20)
         Me.labelIniFinAula3.TabIndex = 7
-        Me.labelIniFinAula3.Text = "Hora inicio / Hora fin / Aula"
+        Me.labelIniFinAula3.Text = "   "
         '
         'labelIniFinAula2
         '
         Me.labelIniFinAula2.AutoSize = True
-        Me.labelIniFinAula2.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.labelIniFinAula2.BackColor = System.Drawing.SystemColors.Control
         Me.labelIniFinAula2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labelIniFinAula2.Location = New System.Drawing.Point(64, 210)
+        Me.labelIniFinAula2.Location = New System.Drawing.Point(31, 207)
         Me.labelIniFinAula2.Name = "labelIniFinAula2"
-        Me.labelIniFinAula2.Size = New System.Drawing.Size(195, 20)
+        Me.labelIniFinAula2.Size = New System.Drawing.Size(21, 20)
         Me.labelIniFinAula2.TabIndex = 8
-        Me.labelIniFinAula2.Text = "Hora inicio / Hora fin / Aula"
+        Me.labelIniFinAula2.Text = "   "
         '
         'labelIniFinAula4
         '
         Me.labelIniFinAula4.AutoSize = True
-        Me.labelIniFinAula4.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.labelIniFinAula4.BackColor = System.Drawing.SystemColors.Control
         Me.labelIniFinAula4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labelIniFinAula4.Location = New System.Drawing.Point(64, 299)
+        Me.labelIniFinAula4.Location = New System.Drawing.Point(31, 296)
         Me.labelIniFinAula4.Name = "labelIniFinAula4"
-        Me.labelIniFinAula4.Size = New System.Drawing.Size(195, 20)
+        Me.labelIniFinAula4.Size = New System.Drawing.Size(21, 20)
         Me.labelIniFinAula4.TabIndex = 9
-        Me.labelIniFinAula4.Text = "Hora inicio / Hora fin / Aula"
+        Me.labelIniFinAula4.Text = "   "
         '
         'labelIniFinAula1
         '
         Me.labelIniFinAula1.AutoSize = True
-        Me.labelIniFinAula1.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.labelIniFinAula1.BackColor = System.Drawing.SystemColors.Control
         Me.labelIniFinAula1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labelIniFinAula1.Location = New System.Drawing.Point(64, 165)
+        Me.labelIniFinAula1.Location = New System.Drawing.Point(31, 162)
         Me.labelIniFinAula1.Name = "labelIniFinAula1"
         Me.labelIniFinAula1.Size = New System.Drawing.Size(195, 20)
         Me.labelIniFinAula1.TabIndex = 10
@@ -130,90 +130,96 @@ Partial Class frmFichar
         'labelIniFinAula5
         '
         Me.labelIniFinAula5.AutoSize = True
-        Me.labelIniFinAula5.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.labelIniFinAula5.BackColor = System.Drawing.SystemColors.Control
         Me.labelIniFinAula5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labelIniFinAula5.Location = New System.Drawing.Point(64, 344)
+        Me.labelIniFinAula5.Location = New System.Drawing.Point(31, 341)
         Me.labelIniFinAula5.Name = "labelIniFinAula5"
-        Me.labelIniFinAula5.Size = New System.Drawing.Size(195, 20)
+        Me.labelIniFinAula5.Size = New System.Drawing.Size(21, 20)
         Me.labelIniFinAula5.TabIndex = 11
-        Me.labelIniFinAula5.Text = "Hora inicio / Hora fin / Aula"
+        Me.labelIniFinAula5.Text = "   "
         '
         'btnFichar1
         '
         Me.btnFichar1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnFichar1.Location = New System.Drawing.Point(299, 159)
+        Me.btnFichar1.Location = New System.Drawing.Point(329, 159)
         Me.btnFichar1.Name = "btnFichar1"
         Me.btnFichar1.Size = New System.Drawing.Size(100, 26)
         Me.btnFichar1.TabIndex = 12
         Me.btnFichar1.Text = "Fichar"
         Me.btnFichar1.UseVisualStyleBackColor = True
+        Me.btnFichar1.Visible = False
         '
         'btnFichar2
         '
         Me.btnFichar2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnFichar2.Location = New System.Drawing.Point(299, 204)
+        Me.btnFichar2.Location = New System.Drawing.Point(329, 204)
         Me.btnFichar2.Name = "btnFichar2"
         Me.btnFichar2.Size = New System.Drawing.Size(100, 26)
         Me.btnFichar2.TabIndex = 13
         Me.btnFichar2.Text = "Fichar"
         Me.btnFichar2.UseVisualStyleBackColor = True
+        Me.btnFichar2.Visible = False
         '
         'btnFichar3
         '
         Me.btnFichar3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnFichar3.Location = New System.Drawing.Point(299, 248)
+        Me.btnFichar3.Location = New System.Drawing.Point(329, 248)
         Me.btnFichar3.Name = "btnFichar3"
         Me.btnFichar3.Size = New System.Drawing.Size(100, 26)
         Me.btnFichar3.TabIndex = 14
         Me.btnFichar3.Text = "Fichar"
         Me.btnFichar3.UseVisualStyleBackColor = True
+        Me.btnFichar3.Visible = False
         '
         'btnFichar4
         '
         Me.btnFichar4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnFichar4.Location = New System.Drawing.Point(299, 293)
+        Me.btnFichar4.Location = New System.Drawing.Point(329, 293)
         Me.btnFichar4.Name = "btnFichar4"
         Me.btnFichar4.Size = New System.Drawing.Size(100, 26)
         Me.btnFichar4.TabIndex = 15
         Me.btnFichar4.Text = "Fichar"
         Me.btnFichar4.UseVisualStyleBackColor = True
+        Me.btnFichar4.Visible = False
         '
         'btnFichar5
         '
         Me.btnFichar5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnFichar5.Location = New System.Drawing.Point(299, 338)
+        Me.btnFichar5.Location = New System.Drawing.Point(329, 338)
         Me.btnFichar5.Name = "btnFichar5"
         Me.btnFichar5.Size = New System.Drawing.Size(100, 26)
         Me.btnFichar5.TabIndex = 16
         Me.btnFichar5.Text = "Fichar"
         Me.btnFichar5.UseVisualStyleBackColor = True
+        Me.btnFichar5.Visible = False
         '
         'btnFichar6
         '
         Me.btnFichar6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnFichar6.Location = New System.Drawing.Point(299, 381)
+        Me.btnFichar6.Location = New System.Drawing.Point(329, 381)
         Me.btnFichar6.Name = "btnFichar6"
         Me.btnFichar6.Size = New System.Drawing.Size(100, 26)
         Me.btnFichar6.TabIndex = 18
         Me.btnFichar6.Text = "Fichar"
         Me.btnFichar6.UseVisualStyleBackColor = True
+        Me.btnFichar6.Visible = False
         '
         'labelIniFinAula6
         '
         Me.labelIniFinAula6.AutoSize = True
-        Me.labelIniFinAula6.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.labelIniFinAula6.BackColor = System.Drawing.SystemColors.Control
         Me.labelIniFinAula6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labelIniFinAula6.Location = New System.Drawing.Point(64, 387)
+        Me.labelIniFinAula6.Location = New System.Drawing.Point(31, 384)
         Me.labelIniFinAula6.Name = "labelIniFinAula6"
-        Me.labelIniFinAula6.Size = New System.Drawing.Size(195, 20)
+        Me.labelIniFinAula6.Size = New System.Drawing.Size(21, 20)
         Me.labelIniFinAula6.TabIndex = 17
-        Me.labelIniFinAula6.Text = "Hora inicio / Hora fin / Aula"
+        Me.labelIniFinAula6.Text = "   "
         '
         'frmFichar
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(430, 452)
+        Me.ClientSize = New System.Drawing.Size(448, 452)
         Me.Controls.Add(Me.btnFichar6)
         Me.Controls.Add(Me.labelIniFinAula6)
         Me.Controls.Add(Me.btnFichar5)

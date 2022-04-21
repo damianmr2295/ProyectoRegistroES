@@ -9,7 +9,7 @@ import java.util.Set;
 public interface AulaRepository  extends CrudRepository<Aula, Long> {
     Set<Aula> findAll();
     Optional<Aula> findById(long id);
-    Set<Aula> findByNombre(String nombre);
+    Aula findByNombre(String nombre);
     void deleteByIdAula(long idAula);
 
 }

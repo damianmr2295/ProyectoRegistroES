@@ -79,6 +79,10 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="domain\Aula.vb" />
+    <Compile Include="domain\Ficha.vb" />
+    <Compile Include="domain\Horario.vb" />
+    <Compile Include="domain\User.vb" />
     <Compile Include="frmBuscar.Designer.vb">
       <DependentUpon>frmBuscar.vb</DependentUpon>
     </Compile>
@@ -89,6 +93,12 @@
       <DependentUpon>frmFichar.vb</DependentUpon>
     </Compile>
     <Compile Include="frmFichar.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHorario.Designer.vb">
+      <DependentUpon>frmHorario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmHorario.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmLogin.vb">
@@ -121,6 +131,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="RestAPI\restAPI.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="frmBuscar.resx">
@@ -128,6 +139,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmFichar.resx">
       <DependentUpon>frmFichar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHorario.resx">
+      <DependentUpon>frmHorario.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.vb</DependentUpon>

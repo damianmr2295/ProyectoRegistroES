@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.Optional;
 import java.util.Set;
 
 @Service
@@ -18,6 +19,11 @@ public class HorarioServiceImpl implements HorarioService {
     @Override
     public Set<Horario> findAll() {
         return horarioRepository.findAll();
+    }
+
+    @Override
+    public Optional<Horario> findById(long id) {
+        return horarioRepository.findById(id);
     }
 
     @Override
