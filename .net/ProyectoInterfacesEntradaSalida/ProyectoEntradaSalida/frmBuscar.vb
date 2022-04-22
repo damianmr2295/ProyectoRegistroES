@@ -21,10 +21,12 @@ Public Class frmBuscar
             DataGridView1.Columns.Add("estado", "Estado")
             Dim users As List(Of User) = restApi.userNombre(txtNombre.Text)
             For Each user As User In users
-                For Each horario As Horario In user.horarios
-                    Dim cont = 0
-                    If comBoxHoraInic.Text.Equals(horario.horaInicio + " - " + horario.horaFin) Then
-                        ocupado = True
+                Dim fichas = restApi.fichaHorario(fecha.Value)
+                For Each ficha As Ficha In fichas
+                    If ficha.horario.user.dni.Equals(user.dni) Then
+                        If ficha.fichado Then
+                            ocupado = True
+                        End If
                     End If
                 Next
 
@@ -32,6 +34,28 @@ Public Class frmBuscar
                     DataGridView1.Rows.Add(user.nombre, user.apellidos, "Ocupado")
                 Else
                     DataGridView1.Rows.Add(user.nombre, user.apellidos, "Libre")
+                End If
+                ocupado = False
+            Next
+        ElseIf rbtnNoFichados.Checked Then
+            DataGridView1.Columns.Add("nombre", "Nombre")
+            DataGridView1.Columns.Add("apelldios", "Apelldios")
+            DataGridView1.Columns.Add("estado", "Estado")
+            Dim users As List(Of User) = restApi.usersAll()
+            For Each user As User In users
+                Dim fichas = restApi.fichaHorario(fecha.Value)
+                For Each ficha As Ficha In fichas
+                    If ficha.horario.user.dni.Equals(user.dni) Then
+                        If ficha.fichado Then
+                            ocupado = True
+                        End If
+                    End If
+                Next
+
+                If ocupado Then
+                    DataGridView1.Rows.Add(user.nombre, user.apellidos, "Presentado")
+                Else
+                    DataGridView1.Rows.Add(user.nombre, user.apellidos, "No presentado")
                 End If
                 ocupado = False
             Next
@@ -53,4 +77,30 @@ Public Class frmBuscar
         End If
     End Sub
 
+    Private Sub rbtnAula_CheckedChanged(sender As Object, e As EventArgs) Handles rbtnAula.CheckedChanged
+        labelNombre.Enabled = True
+        txtNombre.Enabled = True
+        labelHoraIni.Enabled = True
+        comBoxHoraInic.Enabled = True
+        labelFecha.Enabled = False
+        fecha.Enabled = False
+    End Sub
+
+    Private Sub rbtnProfesor_CheckedChanged(sender As Object, e As EventArgs) Handles rbtnProfesor.CheckedChanged
+        labelNombre.Enabled = True
+        txtNombre.Enabled = True
+        labelFecha.Enabled = True
+        fecha.Enabled = True
+        labelHoraIni.Enabled = False
+        comBoxHoraInic.Enabled = False
+    End Sub
+
+    Private Sub rbtnNoFichados_CheckedChanged(sender As Object, e As EventArgs) Handles rbtnNoFichados.CheckedChanged
+        labelFecha.Enabled = True
+        fecha.Enabled = True
+        labelNombre.Enabled = False
+        txtNombre.Enabled = False
+        labelHoraIni.Enabled = False
+        comBoxHoraInic.Enabled = False
+    End Sub
 End Class

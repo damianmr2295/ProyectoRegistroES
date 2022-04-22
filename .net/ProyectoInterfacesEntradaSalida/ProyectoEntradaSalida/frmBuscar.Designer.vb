@@ -32,8 +32,11 @@ Partial Class frmBuscar
         Me.labelHoraIni = New System.Windows.Forms.Label()
         Me.txtNombre = New System.Windows.Forms.TextBox()
         Me.btnBuscar = New System.Windows.Forms.Button()
-        Me.comBoxHoraInic = New System.Windows.Forms.ComboBox()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.comBoxHoraInic = New System.Windows.Forms.ComboBox()
+        Me.fecha = New System.Windows.Forms.DateTimePicker()
+        Me.labelFecha = New System.Windows.Forms.Label()
+        Me.rbtnNoFichados = New System.Windows.Forms.RadioButton()
         CType(Me.imgCabeceraMZ, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -73,7 +76,7 @@ Partial Class frmBuscar
         '
         Me.rbtnProfesor.AutoSize = True
         Me.rbtnProfesor.Checked = True
-        Me.rbtnProfesor.Location = New System.Drawing.Point(140, 143)
+        Me.rbtnProfesor.Location = New System.Drawing.Point(67, 140)
         Me.rbtnProfesor.Name = "rbtnProfesor"
         Me.rbtnProfesor.Size = New System.Drawing.Size(64, 17)
         Me.rbtnProfesor.TabIndex = 9
@@ -84,7 +87,7 @@ Partial Class frmBuscar
         'rbtnAula
         '
         Me.rbtnAula.AutoSize = True
-        Me.rbtnAula.Location = New System.Drawing.Point(258, 143)
+        Me.rbtnAula.Location = New System.Drawing.Point(179, 140)
         Me.rbtnAula.Name = "rbtnAula"
         Me.rbtnAula.Size = New System.Drawing.Size(46, 17)
         Me.rbtnAula.TabIndex = 10
@@ -94,7 +97,7 @@ Partial Class frmBuscar
         'labelNombre
         '
         Me.labelNombre.AutoSize = True
-        Me.labelNombre.Location = New System.Drawing.Point(37, 211)
+        Me.labelNombre.Location = New System.Drawing.Point(43, 183)
         Me.labelNombre.Name = "labelNombre"
         Me.labelNombre.Size = New System.Drawing.Size(44, 13)
         Me.labelNombre.TabIndex = 11
@@ -103,7 +106,8 @@ Partial Class frmBuscar
         'labelHoraIni
         '
         Me.labelHoraIni.AutoSize = True
-        Me.labelHoraIni.Location = New System.Drawing.Point(37, 261)
+        Me.labelHoraIni.Enabled = False
+        Me.labelHoraIni.Location = New System.Drawing.Point(43, 258)
         Me.labelHoraIni.Name = "labelHoraIni"
         Me.labelHoraIni.Size = New System.Drawing.Size(98, 13)
         Me.labelHoraIni.TabIndex = 12
@@ -111,7 +115,7 @@ Partial Class frmBuscar
         '
         'txtNombre
         '
-        Me.txtNombre.Location = New System.Drawing.Point(161, 208)
+        Me.txtNombre.Location = New System.Drawing.Point(161, 180)
         Me.txtNombre.Name = "txtNombre"
         Me.txtNombre.Size = New System.Drawing.Size(224, 20)
         Me.txtNombre.TabIndex = 13
@@ -125,17 +129,6 @@ Partial Class frmBuscar
         Me.btnBuscar.Text = "Buscar"
         Me.btnBuscar.UseVisualStyleBackColor = True
         '
-        'comBoxHoraInic
-        '
-        Me.comBoxHoraInic.DisplayMember = "09:00 h"
-        Me.comBoxHoraInic.FormattingEnabled = True
-        Me.comBoxHoraInic.Items.AddRange(New Object() {"08:00 h - 09:00 h", "09:00 h - 10:00 h", "10:00 h - 11:00 h", "11:00 h - 12:00 h", "12:00 h - 13:00 h", "13:00 h - 14:00 h"})
-        Me.comBoxHoraInic.Location = New System.Drawing.Point(161, 253)
-        Me.comBoxHoraInic.Name = "comBoxHoraInic"
-        Me.comBoxHoraInic.Size = New System.Drawing.Size(224, 21)
-        Me.comBoxHoraInic.TabIndex = 19
-        Me.comBoxHoraInic.Text = "08:00 h - 09:00 h"
-        '
         'DataGridView1
         '
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
@@ -144,11 +137,52 @@ Partial Class frmBuscar
         Me.DataGridView1.Size = New System.Drawing.Size(394, 150)
         Me.DataGridView1.TabIndex = 21
         '
+        'comBoxHoraInic
+        '
+        Me.comBoxHoraInic.DisplayMember = "09:00 h"
+        Me.comBoxHoraInic.Enabled = False
+        Me.comBoxHoraInic.FormattingEnabled = True
+        Me.comBoxHoraInic.Items.AddRange(New Object() {"08:00 h - 09:00 h", "09:00 h - 10:00 h", "10:00 h - 11:00 h", "11:00 h - 12:00 h", "12:00 h - 13:00 h", "13:00 h - 14:00 h"})
+        Me.comBoxHoraInic.Location = New System.Drawing.Point(161, 255)
+        Me.comBoxHoraInic.Name = "comBoxHoraInic"
+        Me.comBoxHoraInic.Size = New System.Drawing.Size(224, 21)
+        Me.comBoxHoraInic.TabIndex = 19
+        Me.comBoxHoraInic.Text = "08:00 h - 09:00 h"
+        '
+        'fecha
+        '
+        Me.fecha.Location = New System.Drawing.Point(161, 218)
+        Me.fecha.Name = "fecha"
+        Me.fecha.Size = New System.Drawing.Size(224, 20)
+        Me.fecha.TabIndex = 24
+        '
+        'labelFecha
+        '
+        Me.labelFecha.AutoSize = True
+        Me.labelFecha.Location = New System.Drawing.Point(43, 224)
+        Me.labelFecha.Name = "labelFecha"
+        Me.labelFecha.Size = New System.Drawing.Size(37, 13)
+        Me.labelFecha.TabIndex = 23
+        Me.labelFecha.Text = "Fecha"
+        '
+        'rbtnNoFichados
+        '
+        Me.rbtnNoFichados.AutoSize = True
+        Me.rbtnNoFichados.Location = New System.Drawing.Point(266, 140)
+        Me.rbtnNoFichados.Name = "rbtnNoFichados"
+        Me.rbtnNoFichados.Size = New System.Drawing.Size(133, 17)
+        Me.rbtnNoFichados.TabIndex = 25
+        Me.rbtnNoFichados.Text = "Profesores no fichados"
+        Me.rbtnNoFichados.UseVisualStyleBackColor = True
+        '
         'frmBuscar
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(430, 496)
+        Me.Controls.Add(Me.rbtnNoFichados)
+        Me.Controls.Add(Me.fecha)
+        Me.Controls.Add(Me.labelFecha)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.comBoxHoraInic)
         Me.Controls.Add(Me.btnBuscar)
@@ -178,6 +212,9 @@ Partial Class frmBuscar
     Friend WithEvents labelHoraIni As Label
     Friend WithEvents txtNombre As TextBox
     Friend WithEvents btnBuscar As Button
-    Friend WithEvents comBoxHoraInic As ComboBox
     Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents comBoxHoraInic As ComboBox
+    Friend WithEvents fecha As DateTimePicker
+    Friend WithEvents labelFecha As Label
+    Friend WithEvents rbtnNoFichados As RadioButton
 End Class

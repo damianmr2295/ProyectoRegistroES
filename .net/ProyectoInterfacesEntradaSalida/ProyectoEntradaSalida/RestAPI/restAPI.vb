@@ -1,6 +1,16 @@
 ﻿Imports Newtonsoft.Json
 
 Public Class RestAPI
+    Function usersAll() As List(Of User)
+        Dim api = New DBApi
+        Dim url As String = "http://localhost:8080/user"
+        Dim headers = New List(Of Parametro)
+        Dim parametros = New List(Of Parametro)
+
+        Dim response = api.MGet(url, headers, parametros)
+        Dim users As List(Of User) = JsonConvert.DeserializeObject(Of List(Of User))(response)
+        Return users
+    End Function
     Function userDni() As User
         Dim api = New DBApi
         Dim url As String = "http://localhost:8080/user/dni/{dni}?dni=" + frmLogin.txtUser.Text

@@ -26,6 +26,7 @@ Partial Class frmHorario
         Me.imgCabeceraMZ = New System.Windows.Forms.PictureBox()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.btnAtras = New System.Windows.Forms.Button()
+        Me.labelUsuario = New System.Windows.Forms.Label()
         CType(Me.imgCabeceraMZ, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -34,9 +35,9 @@ Partial Class frmHorario
         '
         Me.imgCabeceraMZ.ErrorImage = CType(resources.GetObject("imgCabeceraMZ.ErrorImage"), System.Drawing.Image)
         Me.imgCabeceraMZ.Image = Global.ProyectoEntradaSalida.My.Resources.Resources.IESMarcosZaragoza
-        Me.imgCabeceraMZ.Location = New System.Drawing.Point(0, -1)
+        Me.imgCabeceraMZ.Location = New System.Drawing.Point(1, -1)
         Me.imgCabeceraMZ.Name = "imgCabeceraMZ"
-        Me.imgCabeceraMZ.Size = New System.Drawing.Size(429, 86)
+        Me.imgCabeceraMZ.Size = New System.Drawing.Size(567, 86)
         Me.imgCabeceraMZ.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.imgCabeceraMZ.TabIndex = 2
         Me.imgCabeceraMZ.TabStop = False
@@ -47,7 +48,7 @@ Partial Class frmHorario
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Location = New System.Drawing.Point(12, 132)
         Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(405, 306)
+        Me.DataGridView1.Size = New System.Drawing.Size(544, 306)
         Me.DataGridView1.TabIndex = 22
         '
         'btnAtras
@@ -59,11 +60,22 @@ Partial Class frmHorario
         Me.btnAtras.Text = "<----"
         Me.btnAtras.UseVisualStyleBackColor = True
         '
+        'labelUsuario
+        '
+        Me.labelUsuario.AutoSize = True
+        Me.labelUsuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labelUsuario.Location = New System.Drawing.Point(88, 56)
+        Me.labelUsuario.Name = "labelUsuario"
+        Me.labelUsuario.Size = New System.Drawing.Size(183, 20)
+        Me.labelUsuario.TabIndex = 24
+        Me.labelUsuario.Text = "Usuario: NombreUsuario"
+        '
         'frmHorario
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(429, 450)
+        Me.ClientSize = New System.Drawing.Size(568, 450)
+        Me.Controls.Add(Me.labelUsuario)
         Me.Controls.Add(Me.btnAtras)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.imgCabeceraMZ)
@@ -72,10 +84,12 @@ Partial Class frmHorario
         CType(Me.imgCabeceraMZ, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
     Friend WithEvents imgCabeceraMZ As PictureBox
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents btnAtras As Button
+    Friend WithEvents labelUsuario As Label
 End Class

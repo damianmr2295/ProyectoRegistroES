@@ -15,8 +15,8 @@ Public Class frmFichar
         For Each ficha As Ficha In fichas
             If ficha.horario.user.dni.Equals(user.dni) Then
 
-                listaLabel(cont).Text = "Inicio: " + fichas(cont).horario.horaInicio + " || Fin: " + fichas(cont).horario.horaFin + " || Aula: " + fichas(cont).horario.aula.nombre
-                If fichas(cont).fichado Then
+                listaLabel(cont).Text = "Inicio: " + ficha.horario.horaInicio + " || Fin: " + ficha.horario.horaFin + " || Aula: " + ficha.horario.aula.nombre
+                If ficha.fichado Then
                     listaLabel(cont).BackColor = Color.FromArgb(192, 255, 192)
                 Else
                     listaLabel(cont).BackColor = Color.FromArgb(255, 192, 192)

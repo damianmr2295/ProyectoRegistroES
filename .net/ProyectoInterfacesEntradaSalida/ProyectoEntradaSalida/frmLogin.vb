@@ -21,8 +21,5 @@ Public Class frmLogin
         End Try
     End Sub
 
-    Private Sub frmLogin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-    End Sub
 End Class
 
