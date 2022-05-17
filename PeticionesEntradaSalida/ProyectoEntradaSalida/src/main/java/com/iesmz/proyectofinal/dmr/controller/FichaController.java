@@ -17,11 +17,31 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Set;
 
 @RestController
 public class FichaController {
     @Autowired
     private FichaService fichaService;
+
+    @Operation(summary = "Obtiene todas las fichas")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Existe los numescalas del vuelo", content = @Content(schema = @Schema(implementation =
+                    Ficha.class))),
+            @ApiResponse(responseCode = "404", description = "El vuelo no existe", content = @Content(schema = @Schema(implementation =
+                    Response.class)))
+    })
+    @GetMapping( value = "/ficha/", produces = "application/json")
+    public ResponseEntity<Set<Ficha>> getAllMesa() {
+        Set<Ficha> ficha=null;
+        ficha = fichaService.findAll();
+        return new ResponseEntity<>(ficha, HttpStatus.OK);
+    }
+
+
+
+
+
 
     @Operation(summary="Obtiene una ficha por su id")
     @ApiResponses(value = {

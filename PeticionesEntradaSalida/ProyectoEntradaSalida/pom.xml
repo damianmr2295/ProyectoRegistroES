@@ -70,6 +70,7 @@
 			<artifactId>springdoc-openapi-ui</artifactId>
 			<version>1.6.3</version>
 		</dependency>
+
     </dependencies>
 
 	<build>
