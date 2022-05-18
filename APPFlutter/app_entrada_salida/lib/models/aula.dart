@@ -29,5 +29,9 @@ class Aula {
     nombre = json['nombre'];
     horario = json['horario'];
   }
+
+
+
+  
 }
 

@@ -1,5 +1,6 @@
 import 'dart:ui';
 import 'package:app_entrada_salida/models/ficha.dart';
+import 'package:intl/intl.dart';
 import 'package:app_entrada_salida/models/horario.dart';
 import 'package:app_entrada_salida/providers/horario_providers.dart';
 import 'package:flutter/cupertino.dart';
@@ -25,14 +26,11 @@ class Statefichar extends State<bodyFichar> {
           ),
           body: Column(
             children: listaString.map((e) => Fichar(e)).toList(),
-            
           ),
           floatingActionButton: FloatingActionButton(
             child: Icon(Icons.add),
-            onPressed: (){
-
-            },
-          ) ,
+            onPressed: () {},
+          ),
         ));
   }
 }
@@ -50,37 +48,6 @@ class Fichar extends StatelessWidget {
     );
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 class bodyFicharPageState extends State<bodyFichar> {
   @override
@@ -103,6 +70,7 @@ class bodyFicharPageState extends State<bodyFichar> {
       ),
     );
   }
+
   Widget crearFicha() {
     final barprovider = proyectoProvider();
 
@@ -119,9 +87,11 @@ class bodyFicharPageState extends State<bodyFichar> {
         });
   }
 
-Widget _tarjetasmesas(List<dynamic> fichado) {
+  Widget _tarjetasmesas(List<dynamic> fichado) {
+    final barprovider = proyectoProvider();
     MaterialColor? colorest = Colors.red;
-    String codmesa = "";
+    DateTime now = DateTime.now();
+    String fechaActual = DateFormat('yyyy-MM-dd').format(now);
     return Container(
       child: Column(
         children: [
@@ -132,31 +102,35 @@ Widget _tarjetasmesas(List<dynamic> fichado) {
                 itemCount: fichado.length,
                 itemBuilder: (BuildContext context, int index) {
                   bool est = fichado[index].getFichado();
-                  int cod = fichado[index].getIdFicha();
+                  String hora = fichado[index].getHorario().getHoraInicio();
+                  hora += "/ " + fichado[index].getHorario().getHoraFin();
                   String fecha = fichado[index].getFecha();
-                  Horario horario = fichado[index].getHorario();
-                  
-                    if (est) {
-                      colorest = Colors.green;
-                    }else{
-                      colorest = Colors.red;
-                    }
-                  return Container(
-                    padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
-                    height: 60,
-                    child: Card(
-                        elevation: 0,
-                        color: colorest,
-                        child: GestureDetector(
-                          //onTap: () => Navigator.pushNamed(context, 'Ficha',
-                          //    arguments: fichado[index]),
-                          child: Text(
-                            "Ficha nº $cod// $fecha",
-                            style: TextStyle(fontSize: 20),
-                            textAlign: TextAlign.center,
-                          ),
-                        )),
-                  );
+                  String curso = fichado[index].getHorario().getCurso();
+                  if (est) {
+                    colorest = Colors.green;
+                  } else {
+                    colorest = Colors.red;
+                  }
+                  if (fecha == fechaActual) {
+                    return Container(
+                      padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
+                      height: 60,
+                      child: Card(
+                          elevation: 10,
+                          color: colorest,
+                          child: GestureDetector(
+                            onTap: () {
+                              barprovider.putFichar(fichado[index]);
+                            },
+                            child: Text(
+                              "$hora // $curso",
+                              style: TextStyle(fontSize: 18),
+                              textAlign: TextAlign.center,
+                            ),
+                          )),
+                    );
+                  }
+                  return Container();
                 }),
           ),
         ],

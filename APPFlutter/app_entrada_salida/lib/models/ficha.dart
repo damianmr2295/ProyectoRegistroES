@@ -31,7 +31,7 @@ class Ficha {
     idFicha = json['idFicha'];
     fecha = json['fecha'];
     fichado = json['fichado'];
-    horario = json['horario'];
+    horario = (Horario.fromJson(json['horario'])) as Horario?;
   }
 
   int? getIdFicha(){
@@ -43,7 +43,19 @@ class Ficha {
   bool? getFichado() {
     return fichado;
   }
-  dynamic getHorario(){
+  dynamic? getHorario(){
     return horario;
+  }
+  String toString() {
+    return "{" +
+    "\"idFicha\": $idFicha "+
+    ", \"fecha\": \"$fecha"'\"' +
+    ", \"fichado\": $fichado  "+
+    '}';
+  }
+
+
+  setFichado(bool estado){
+    fichado = estado;
   }
 }

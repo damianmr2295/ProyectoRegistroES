@@ -40,8 +40,17 @@ class Horario {
     diaSemana = json['diaSemana'];
     curso = json['curso'];
     horaFin = json['horaFin'];
-    aula = json['aula'];
-    user = json['user'];
+    //aula = json['aula'];
+    //user = json['user'];
+  }
+    Horario.fromJson(dynamic json) {
+    idHorario = json['idHorario'];
+    horaInicio = json['horaInicio'];
+    diaSemana = json['diaSemana'];
+    curso = json['curso'];
+    horaFin = json['horaFin'];
+    //aula = json['aula'];
+    //user = json['user'];
   }
 
   int? getIdHorario(){
