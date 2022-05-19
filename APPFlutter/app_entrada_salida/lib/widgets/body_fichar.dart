@@ -1,7 +1,5 @@
 import 'dart:ui';
-import 'package:app_entrada_salida/models/ficha.dart';
 import 'package:intl/intl.dart';
-import 'package:app_entrada_salida/models/horario.dart';
 import 'package:app_entrada_salida/providers/horario_providers.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -13,46 +11,8 @@ class bodyFichar extends StatefulWidget {
   }
 }
 
-class Statefichar extends State<bodyFichar> {
-  List<String> listaString = ["HOLA", "MIERDA", "FUNCIONA"];
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-        title: 'App Fichar',
-        home: Scaffold(
-          appBar: AppBar(
-            title: Text("Fichaje diario"),
-          ),
-          body: Column(
-            children: listaString.map((e) => Fichar(e)).toList(),
-          ),
-          floatingActionButton: FloatingActionButton(
-            child: Icon(Icons.add),
-            onPressed: () {},
-          ),
-        ));
-  }
-}
-
-class Fichar extends StatelessWidget {
-  String fichar;
-  Fichar(this.fichar);
-
-  @override
-  Widget build(BuildContext context) {
-    return Card(
-      child: Center(
-        child: Text(fichar),
-      ),
-    );
-  }
-}
-
 class bodyFicharPageState extends State<bodyFichar> {
   @override
-  late List<dynamic> locmesas;
-  var mesa = "";
   Widget build(BuildContext context) {
     return Scaffold(
       body: ListView(
@@ -72,13 +32,13 @@ class bodyFicharPageState extends State<bodyFichar> {
   }
 
   Widget crearFicha() {
-    final barprovider = proyectoProvider();
+    final fichasProvider = proyectoProvider();
 
     return FutureBuilder(
-        future: barprovider.getinfoFichar(),
+        future: fichasProvider.getinfoFichar(),
         builder: (BuildContext context, AsyncSnapshot<List> snapshot) {
           if (snapshot.hasData) {
-            return _tarjetasmesas(snapshot.data!);
+            return _tarjetaFicha(snapshot.data!);
           } else {
             return const Center(
               child: CircularProgressIndicator(),
@@ -87,7 +47,7 @@ class bodyFicharPageState extends State<bodyFichar> {
         });
   }
 
-  Widget _tarjetasmesas(List<dynamic> fichado) {
+  Widget _tarjetaFicha(List<dynamic> fichado) {
     final barprovider = proyectoProvider();
     MaterialColor? colorest = Colors.red;
     DateTime now = DateTime.now();
