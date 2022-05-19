@@ -120,7 +120,9 @@ class bodyFicharPageState extends State<bodyFichar> {
                           color: colorest,
                           child: GestureDetector(
                             onTap: () {
-                              barprovider.putFichar(fichado[index]);
+                              setState(() {
+                                barprovider.putFichar(fichado[index]);
+                              });
                             },
                             child: Text(
                               "$hora // $curso",

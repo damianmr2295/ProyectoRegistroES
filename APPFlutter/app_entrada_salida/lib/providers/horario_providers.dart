@@ -14,7 +14,6 @@ class proyectoProvider {
     final url = Uri.http(urlmain, url_peticion);
     final resp = await http.get(url);
     var decodedData = json.decode(resp.body);
-    //print(decodedData);
     final listaFichas = Fichas.fromJsonList(decodedData);
 
     return listaFichas.items;
@@ -28,10 +27,8 @@ class proyectoProvider {
       est = true;
     }
     ficha.setFichado(est);
-
     final String url_peticion = "/ficha/modificar/$idFicha";
     final url = Uri.http(urlmain, url_peticion);
-    print(ficha.toString());
     await http.put(
       url,
       body:        
@@ -41,11 +38,9 @@ class proyectoProvider {
           }
       ).then((response) {
         Map<String, dynamic> result = json.decode(response.body);
-        print(result);
       });
 
   }
-
 
 
   Future<List<Horario>> getHorario() async {

@@ -40,8 +40,8 @@ class Horario {
     diaSemana = json['diaSemana'];
     curso = json['curso'];
     horaFin = json['horaFin'];
-    //aula = json['aula'];
-    //user = json['user'];
+    aula = json['aula'];
+    user = json['user'];
   }
     Horario.fromJson(dynamic json) {
     idHorario = json['idHorario'];
@@ -49,20 +49,42 @@ class Horario {
     diaSemana = json['diaSemana'];
     curso = json['curso'];
     horaFin = json['horaFin'];
-    //aula = json['aula'];
-    //user = json['user'];
+    aula = (Aula.fromJson(json['aula']));
+    user = (User.fromJson(json['user']));
+
   }
 
   int? getIdHorario(){
-    return this.idHorario;
+    return idHorario;
   }
   String? getHoraInicio() {
-    return this.horaInicio;
+    return horaInicio;
   }
   String? getHoraFin() {
-    return this.horaFin;
+    return horaFin;
   }
   String? getCurso(){
-    return this.curso;
+    return curso;
   }
+  int? getDiaSemana() {
+    return diaSemana;
+  }
+  int? getAula() {
+    return aula!.getIdAula();
+  }
+  String? getUser(){
+    return user!.getNombre();
+  }
+  String toString() {
+    return "{" +
+    "\"idHorario\": $idHorario "+
+    ", \"curso\": \"$curso"'\"' +
+    ", \"diaSemana\": $diaSemana "+
+    ", \"horaInicio\": \"$horaInicio"'\"' +
+    ", \"horaFin\": \"$horaFin"'\"' +
+    ", \"user\": "+ user.toString() +""'' +
+    ", \"aula\": "+ aula.toString() +""'' +
+    '}';
+  }
+
 }

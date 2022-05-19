@@ -31,7 +31,7 @@ class Ficha {
     idFicha = json['idFicha'];
     fecha = json['fecha'];
     fichado = json['fichado'];
-    horario = (Horario.fromJson(json['horario'])) as Horario?;
+    horario = (Horario.fromJson(json['horario']));
   }
 
   int? getIdFicha(){
@@ -51,6 +51,7 @@ class Ficha {
     "\"idFicha\": $idFicha "+
     ", \"fecha\": \"$fecha"'\"' +
     ", \"fichado\": $fichado  "+
+    ", \"horario\": " + horario.toString() +
     '}';
   }
 

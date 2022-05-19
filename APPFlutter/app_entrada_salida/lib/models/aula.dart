@@ -15,23 +15,43 @@ List<Aula> items = [];
 class Aula {
   int? idAula;
   String? nombre;
-  List<Horario>? horario;
+  List<Horario>? horarios;
   Aula(
     {
       this.idAula,
       this.nombre,
-      this.horario,
+      this.horarios,
     }
   );
 
   Aula.fromJsonMap(Map<String, dynamic> json) {
     idAula = json['idAula'];
     nombre = json['nombre'];
-    horario = json['horario'];
+    horarios = json['horario'];
+       }
+
+  Aula.fromJson(dynamic json) {
+    idAula = json['idAula'];
+    nombre = json['nombre'];
+    horarios = json['horario'];   
+
   }
 
-
+  int? getIdAula(){
+    return idAula;
+  }
+  String? getNombre() {
+    return nombre;
+  }
+  List<Horario>? getHorarios() {
+    return horarios; 
+  }
+  String toString() {
+    return "{" +
+    "\"idAula\": $idAula "+
+    ", \"nombre\": \"$nombre"'\"' +
+    '}';
+  }
 
   
 }
-

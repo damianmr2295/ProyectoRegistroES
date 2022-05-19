@@ -1,5 +1,6 @@
 
 import 'aula.dart';
+import 'departamento.dart';
 import 'horario.dart';
 
 class Users{
@@ -15,30 +16,67 @@ List<User> items = [];
 }
 
 class User {
-  int? idAula;
+  int? idUser;
   String? dni;
   String? nombre;
   String? apellidos;
-  Aula? pasword;
+  String? password;
   List <Horario>? horarios;
+  Departamento? departamento; 
   User(
     {
-      this.idAula,
+      this.idUser,
       this.dni,
       this.nombre,
       this.apellidos,
-      this.pasword,
+      this.password,
       this.horarios,
     }
   );
 
   User.fromJsonMap(Map<String, dynamic> json) {
-    idAula = json['idAula'];
+    idUser = json['idUser'];
     dni = json['dni'];
     nombre = json['nombre'];
     apellidos = json['apellidos'];
-    pasword = json['pasword'];
-    horarios = json['horarios'];
+    password = json['password'];
+    horarios = json['horario'];
   }
+    User.fromJson(dynamic json) {
+    idUser = json['idUser'];
+    dni = json['dni'];
+    nombre = json['nombre'];
+    apellidos = json['apellidos'];
+    password = json['password'];
+    horarios = json['horario'];
+    departamento= (Departamento.fromJson(json['departamento']));
+
+  }
+  int? getIdUser(){
+    return idUser;
+  }
+  String? getDni() {
+    return dni;
+  }
+  String? getNombre() {
+    return nombre;
+  }
+  String? getApellidos() {
+    return apellidos;
+  }
+  String? getPassword() {
+    return password;
+  }
+  String toString() {
+    return "{" +
+    "\"idUser\": $idUser "+
+    ", \"dni\": \"$dni"'\"' +
+    ", \"nombre\": \"$nombre"'\"' +
+    ", \"apellidos\": \"$apellidos"'\"' +
+    ", \"password\": \"$password"'\"' +
+    ", \"departamento\": "+ departamento.toString() +""'' +
+    '}';
+  }
+
 }
 
