@@ -1,5 +1,6 @@
 import 'dart:ui';
 import 'package:app_entrada_salida/models/ficha.dart';
+import 'package:app_entrada_salida/pages/login_page.dart';
 import 'package:app_entrada_salida/widgets/single_card.dart';
 import 'package:app_entrada_salida/widgets/top_card.dart';
 import 'package:intl/intl.dart';
@@ -8,13 +9,17 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class bodyHome extends StatefulWidget {
+  String? usuario;
+  bodyHome(this.usuario);
   @override
   State<bodyHome> createState() {
-    return bodyFicharPageState();
+    return bodyFicharPageState(usuario);
   }
 }
 
 class bodyFicharPageState extends State<bodyHome> {
+  String? usuario;
+  bodyFicharPageState(this.usuario);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,7 +30,7 @@ class bodyFicharPageState extends State<bodyHome> {
           Column(
             children: [
               const Divider(),
-              crearFicha(),
+              crearFicha(usuario),
             ],
           ),
           const Divider(),
@@ -34,14 +39,14 @@ class bodyFicharPageState extends State<bodyHome> {
     );
   }
 
-  Widget crearFicha() {
+  Widget crearFicha(String? usuario) {
     final fichasProvider = proyectoProvider();
     Future<List<Ficha>> fichas = fichasProvider.getinfoFichar();
     return FutureBuilder(
         future: fichas,
         builder: (BuildContext context, AsyncSnapshot<List> snapshot) {
           if (snapshot.hasData) {
-            return tarjetaFicha(snapshot.data!);
+            return tarjetaFicha(snapshot.data!, usuario);
           } else {
             return const Center(
               child: CircularProgressIndicator(),
@@ -50,9 +55,9 @@ class bodyFicharPageState extends State<bodyHome> {
         });
   }
 
-  Widget tarjetaFicha(List<dynamic> fichas) {
-    String ultConex = ultimaDiaFichado(fichas);
-    String fichado = hasFichado(fichas);
+  Widget tarjetaFicha(List<dynamic> fichas, String? usuario) {
+    String ultConex = ultimaDiaFichado(fichas, usuario);
+    String fichado = hasFichado(fichas, usuario);
     return Column(
       children: [
         ListView.builder(
@@ -162,7 +167,7 @@ DateTime devolverFecha(DateTime fecha) {
   return fechaRestada;
 }
 
-String ultimaDiaFichado(List<dynamic> fichas) {
+String ultimaDiaFichado(List<dynamic> fichas, String? usuario) {
   String conexion = "No hay conexión";
   DateTime dia = DateTime.now().subtract(const Duration(days: 8));
   String diaSemana;
@@ -173,7 +178,7 @@ String ultimaDiaFichado(List<dynamic> fichas) {
     if (dia.isBefore(DateTime.now())) {
       for (int i = 0; i < fichas.length; i++) {
         if ((diaSemana == fichas[i].getFecha()) &&
-            (fichas[i].getFichado() == true)) {
+            (fichas[i].getFichado() == true) && usuario == fichas[i].getHorario().getUser()) {
           conexion = fichas[index].getFecha();
         }
       }
@@ -184,14 +189,14 @@ String ultimaDiaFichado(List<dynamic> fichas) {
   return conexion;
 }
 
-String hasFichado(List<dynamic> fichas) {
+String hasFichado(List<dynamic> fichas, String? usuario) {
   String fichado = "Hoy no has fichado";
   String diaSemana = DateFormat('yyyy-MM-dd').format(DateTime.now());
   int index = 0;
   do {
     for (int i = 0; i < fichas.length; i++) {
       if ((diaSemana == fichas[i].getFecha()) &&
-          (fichas[i].getFichado() == true)) {
+          (fichas[i].getFichado() == true && usuario == fichas[i].getHorario().getUser())) {
         fichado = "Has fichado";
       }
     }

@@ -104,6 +104,7 @@ Widget textPassword(TextEditingController password) {
 Widget botonEnter(BuildContext context, TextEditingController user,
     TextEditingController password) {
       bool usuarioCorrecto = false;
+      String? usuarioLogeado = "";
   return FlatButton(
       color: Colors.blueAccent,
       padding: const EdgeInsets.symmetric(horizontal: 100, vertical: 10),
@@ -116,14 +117,15 @@ Widget botonEnter(BuildContext context, TextEditingController user,
 
         if(resp.body.isNotEmpty){
         var decodedData = json.decode(resp.body);
-        final usuario = User.fromJson(decodedData);
+        User usuario = User.fromJson(decodedData);
         usuarioCorrecto =
             comprobarUsuario(user.text, password.text, usuario.getPassword());
+        usuarioLogeado = usuario.getNombre();
         }
         if (usuarioCorrecto) {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => principalPage()),
+            MaterialPageRoute(builder: (context) => principalPage(usuarioLogeado)),
           );
         } else {
           showDialog(

@@ -4,6 +4,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class principalPage extends StatefulWidget {
+  String? usuario;
+  principalPage(this.usuario);
   @override
   State<principalPage> createState() => _principalPageState();
 }
@@ -23,8 +25,8 @@ class _principalPageState extends State<principalPage> {
         controller: pageController,
         physics: NeverScrollableScrollPhysics(),
         children: [ 
-        bodyHome(),
-        bodyFichar(),
+        bodyHome(widget.usuario),
+        bodyFichar(widget.usuario),
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(

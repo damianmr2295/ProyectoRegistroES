@@ -4,16 +4,18 @@ import 'package:app_entrada_salida/providers/horario_providers.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-// ignore: camel_case_types
 class bodyFichar extends StatefulWidget {
+  String? usuario;
+  bodyFichar(this.usuario);
   @override
   State<bodyFichar> createState() {
-    return bodyFicharPageState();
+    return bodyFicharPageState(usuario);
   }
 }
 
-// ignore: camel_case_types
 class bodyFicharPageState extends State<bodyFichar> {
+  String? usuario;
+  bodyFicharPageState(this.usuario);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -65,13 +67,15 @@ class bodyFicharPageState extends State<bodyFichar> {
               hora += "/ " + fichado[index].getHorario().getHoraFin();
               String fecha = fichado[index].getFecha();
               String curso = fichado[index].getHorario().getCurso();
-              if (est) {
-                if (fecha == fechaActual) {
-                  return fichaTrue(fichasProvider, fichado, index, hora, curso);
-                }
-              } else {
-                if (fecha == fechaActual) {
-                  return fichaFalse(fichasProvider, fichado, index, hora, curso);
+              if(usuario == fichado[index].getHorario().getUser()){
+                if (est) {
+                  if (fecha == fechaActual ) {
+                    return fichaTrue(fichasProvider, fichado, index, hora, curso);
+                  }
+                } else {
+                  if (fecha == fechaActual) {
+                    return fichaFalse(fichasProvider, fichado, index, hora, curso);
+                  }
                 }
               }
               return Container();

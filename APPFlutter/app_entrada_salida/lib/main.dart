@@ -13,8 +13,6 @@ class MyApp extends StatelessWidget {
         initialRoute: 'login_page',
         routes: {
           'login_page': (BuildContext context) => loginPage(),
-          'principal_page': (BuildContext context) => principalPage(),
-
         });
   }
 }
