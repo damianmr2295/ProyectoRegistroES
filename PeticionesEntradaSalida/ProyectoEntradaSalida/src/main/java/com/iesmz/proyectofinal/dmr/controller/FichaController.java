@@ -37,12 +37,6 @@ public class FichaController {
         ficha = fichaService.findAll();
         return new ResponseEntity<>(ficha, HttpStatus.OK);
     }
-
-
-
-
-
-
     @Operation(summary="Obtiene una ficha por su id")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "600", description = "La ficha existe",

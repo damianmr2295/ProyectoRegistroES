@@ -1,5 +1,5 @@
 import 'package:app_entrada_salida/widgets/body_fichar.dart';
-import 'package:app_entrada_salida/widgets/body_principal.dart';
+import 'package:app_entrada_salida/widgets/body_home.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -23,7 +23,7 @@ class _principalPageState extends State<principalPage> {
         controller: pageController,
         physics: NeverScrollableScrollPhysics(),
         children: [ 
-        bodyPrincipal(),
+        bodyHome(),
         bodyFichar(),
         ],
       ),
@@ -44,29 +44,16 @@ class _principalPageState extends State<principalPage> {
       ),
     );
   }
-
-  BottomNavigationBarItem pageFichar() {
-    return const BottomNavigationBarItem(
-          icon: Icon(Icons.drive_file_rename_outline_outlined),
-          label: 'Fichar'
-          );
-  }
-
   BottomNavigationBarItem pagePrinci() {
     return const BottomNavigationBarItem(
           icon: Icon(Icons.home),
           label: 'Home'
           );
   }
-}
-class CustomScreeeen extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      color: Colors.blue,
-      child: const Center(
-        child: Text("pagina dos"),
-      ),
-    );
+  BottomNavigationBarItem pageFichar() {
+    return const BottomNavigationBarItem(
+          icon: Icon(Icons.drive_file_rename_outline_outlined),
+          label: 'Fichar'
+          );
   }
 }

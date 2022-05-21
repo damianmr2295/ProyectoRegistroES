@@ -1,7 +1,10 @@
 import 'dart:ui';
 
+import 'package:app_entrada_salida/models/ficha.dart';
+import 'package:app_entrada_salida/providers/horario_providers.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 class SingleCard extends StatelessWidget {
   final String text;
@@ -29,7 +32,8 @@ class _CardBackground extends StatelessWidget {
   Widget build(BuildContext context) {
     final boxDecoration = BoxDecoration(
         color: const Color.fromRGBO(25, 180, 180, 0.7),
-        borderRadius: BorderRadius.circular(20));
+        borderRadius: BorderRadius.circular(20)
+      );
     return Container(
         margin: const EdgeInsets.only(left: 20.0, right: 20.0),
         child: ClipRRect(

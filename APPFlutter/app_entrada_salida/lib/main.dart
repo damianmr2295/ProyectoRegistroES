@@ -1,3 +1,4 @@
+import 'package:app_entrada_salida/pages/login_page.dart';
 import 'package:app_entrada_salida/pages/principal_page.dart';
 import 'package:flutter/material.dart';
 
@@ -9,9 +10,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'AppEntradaSalida',
-        initialRoute: 'principal_page',
+        initialRoute: 'login_page',
         routes: {
+          'login_page': (BuildContext context) => loginPage(),
           'principal_page': (BuildContext context) => principalPage(),
+
         });
   }
 }

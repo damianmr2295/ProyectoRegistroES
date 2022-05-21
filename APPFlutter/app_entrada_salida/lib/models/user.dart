@@ -1,5 +1,4 @@
 
-import 'aula.dart';
 import 'departamento.dart';
 import 'horario.dart';
 
@@ -41,6 +40,7 @@ class User {
     apellidos = json['apellidos'];
     password = json['password'];
     horarios = json['horario'];
+    departamento= (Departamento.fromJson(json['departamento']));
   }
     User.fromJson(dynamic json) {
     idUser = json['idUser'];

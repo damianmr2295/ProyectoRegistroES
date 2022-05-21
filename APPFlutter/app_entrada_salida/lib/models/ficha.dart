@@ -7,7 +7,7 @@ List<Ficha> items = [];
   Fichas.fromJsonList(List<dynamic> jsonList) {
     if (jsonList == null) return;
     for (var item in jsonList) {
-      final ficha = new Ficha.fromJsonMap(item);
+      final ficha = Ficha.fromJsonMap(item);
       items.add(ficha);
     }
   }
