@@ -2,7 +2,6 @@
 
 import 'package:app_entrada_salida/models/user.dart';
 import 'package:app_entrada_salida/pages/principal_page.dart';
-import 'package:app_entrada_salida/providers/horario_providers.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
@@ -104,7 +103,8 @@ Widget textPassword(TextEditingController password) {
 Widget botonEnter(BuildContext context, TextEditingController user,
     TextEditingController password) {
       bool usuarioCorrecto = false;
-      String? usuarioLogeado = "";
+      String? userNombre = "";
+      String? userDni = "";
   return FlatButton(
       color: Colors.blueAccent,
       padding: const EdgeInsets.symmetric(horizontal: 100, vertical: 10),
@@ -120,12 +120,16 @@ Widget botonEnter(BuildContext context, TextEditingController user,
         User usuario = User.fromJson(decodedData);
         usuarioCorrecto =
             comprobarUsuario(user.text, password.text, usuario.getPassword());
-        usuarioLogeado = usuario.getNombre();
+        userDni = usuario.getDni();
+        userNombre = usuario.getNombre();
         }
         if (usuarioCorrecto) {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => principalPage(usuarioLogeado)),
+          Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute<Null>(
+            builder: (BuildContext context){
+              return new principalPage(userNombre, userDni);
+            }  
+            ),(Route<dynamic> route) => false
+
           );
         } else {
           showDialog(

@@ -42,15 +42,12 @@ class proyectoProvider {
       Map<String, dynamic> result = json.decode(response.body);
     });
   }
-  Future<User> getUserDni(String dni) async {
+  Future<User> getUserDni(String? dni) async {
     const String urlPeticion = "/user/dni/";
     final url = Uri.http(urlmain, urlPeticion + "{dni}",  { "dni" : "asdf" });
     final resp = await http.get(url);
     var decodedData = json.decode(resp.body);
     final user = User.fromJson(decodedData);
-
-
-
     return user;
   }
 

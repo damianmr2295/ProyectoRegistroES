@@ -1,11 +1,13 @@
 import 'package:app_entrada_salida/widgets/body_fichar.dart';
 import 'package:app_entrada_salida/widgets/body_home.dart';
+import 'package:app_entrada_salida/widgets/body_perfil.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class principalPage extends StatefulWidget {
-  String? usuario;
-  principalPage(this.usuario);
+  String? userNombre;
+  String? userDni;
+  principalPage(this.userNombre, this.userDni);
   @override
   State<principalPage> createState() => _principalPageState();
 }
@@ -18,15 +20,23 @@ class _principalPageState extends State<principalPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("IES MARCOS ZARAGOZA"),
-        elevation: 0,
+        centerTitle: true,
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+            image: DecorationImage(image: NetworkImage( "https://portal.edu.gva.es/iesmarcoszaragoza/wp-content/uploads/sites/256/2021/04/cabecera-k-fondocolores2-nologos-cdc.png"),
+            fit: BoxFit.fill
+            )
+          ),
+        ),
       ),
       body: PageView(
         controller: pageController,
         physics: NeverScrollableScrollPhysics(),
         children: [ 
-        bodyHome(widget.usuario),
-        bodyFichar(widget.usuario),
+        bodyHome(widget.userNombre),
+        bodyFichar(widget.userNombre),
+        bodyPerfil(widget.userDni),
+
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
@@ -42,6 +52,7 @@ class _principalPageState extends State<principalPage> {
         items: [
           pagePrinci(),
           pageFichar(),
+          pagePerfil(),
         ],
       ),
     );
@@ -58,4 +69,11 @@ class _principalPageState extends State<principalPage> {
           label: 'Fichar'
           );
   }
+  BottomNavigationBarItem pagePerfil() {
+    return const BottomNavigationBarItem(
+          icon: Icon(Icons.person),
+          label: 'Perfil'
+          );
+  }
+
 }
