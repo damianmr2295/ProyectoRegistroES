@@ -1,6 +1,6 @@
-import 'package:app_entrada_salida/widgets/body_fichar.dart';
-import 'package:app_entrada_salida/widgets/body_home.dart';
-import 'package:app_entrada_salida/widgets/body_perfil.dart';
+import 'package:app_entrada_salida/widgets/body/body_fichar.dart';
+import 'package:app_entrada_salida/widgets/body/body_home.dart';
+import 'package:app_entrada_salida/widgets/body/body_perfil.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -22,7 +22,7 @@ class _principalPageState extends State<principalPage> {
       appBar: AppBar(
         centerTitle: true,
         flexibleSpace: Container(
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             image: DecorationImage(image: NetworkImage( "https://portal.edu.gva.es/iesmarcoszaragoza/wp-content/uploads/sites/256/2021/04/cabecera-k-fondocolores2-nologos-cdc.png"),
             fit: BoxFit.fill
             )

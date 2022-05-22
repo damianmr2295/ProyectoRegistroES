@@ -1,8 +1,7 @@
 import 'dart:ui';
 import 'package:app_entrada_salida/models/ficha.dart';
-import 'package:app_entrada_salida/pages/login_page.dart';
-import 'package:app_entrada_salida/widgets/single_card.dart';
-import 'package:app_entrada_salida/widgets/top_card.dart';
+import 'package:app_entrada_salida/widgets/card/single_card.dart';
+import 'package:app_entrada_salida/widgets/card/top_card.dart';
 import 'package:intl/intl.dart';
 import 'package:app_entrada_salida/providers/horario_providers.dart';
 import 'package:flutter/cupertino.dart';
@@ -82,7 +81,7 @@ class bodyFicharPageState extends State<bodyHome> {
       padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
       height: 180,
       child: Card(
-          child: GestureDetector(
+        child: GestureDetector(
         child: Table(children: [
           const TableRow(
             children: [
@@ -175,14 +174,12 @@ String ultimaDiaFichado(List<dynamic> fichas, String? usuario) {
   do {
     dia = devolverFecha(dia);
     diaSemana = DateFormat('yyyy-MM-dd').format(dia);
-    if (dia.isBefore(DateTime.now())) {
       for (int i = 0; i < fichas.length; i++) {
         if ((diaSemana == fichas[i].getFecha()) &&
             (fichas[i].getFichado() == true) && usuario == fichas[i].getHorario().getUser()) {
-          conexion = fichas[index].getFecha();
+          conexion = fichas[i].getFecha();
         }
       }
-    }
     index++;
   } while (index < fichas.length);
 

@@ -1,8 +1,10 @@
 import 'package:app_entrada_salida/models/ficha.dart';
 import 'package:app_entrada_salida/models/user.dart';
-import 'package:app_entrada_salida/widgets/single_card.dart';
-import 'package:app_entrada_salida/widgets/top_card.dart';
-import 'package:app_entrada_salida/widgets/user_card.dart';
+import 'package:app_entrada_salida/pages/login_page.dart';
+import 'package:app_entrada_salida/widgets/card/cerrar_sesion_card.dart';
+import 'package:app_entrada_salida/widgets/card/single_card.dart';
+import 'package:app_entrada_salida/widgets/card/top_card.dart';
+import 'package:app_entrada_salida/widgets/card/user_card.dart';
 import 'package:intl/intl.dart';
 import 'package:app_entrada_salida/providers/horario_providers.dart';
 import 'package:flutter/cupertino.dart';
@@ -19,8 +21,11 @@ class bodyPerfil extends StatefulWidget {
 }
 
 class bodyPerfilPageState extends State<bodyPerfil> {
+  
  @override
   Widget build(BuildContext context) {
+        print(widget.userDni);
+
     return Scaffold(
       body: ListView(
         padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 2),
@@ -67,7 +72,7 @@ class bodyPerfilPageState extends State<bodyPerfil> {
               } else if (index == 1) {
                 return apellidoUser(user.getApellidos());
               } else {
-                return horario();
+                return cerrarSesion();
               }
             }),
       ],
@@ -116,24 +121,36 @@ class bodyPerfilPageState extends State<bodyPerfil> {
     );
   }
 
-  Container horario() {
+  Container cerrarSesion() {
     return Container(
-      padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
+      padding: const EdgeInsets.fromLTRB(100, 10, 100, 0),
       height: 80,
       child: Card(
-          child: GestureDetector(
-        child: Table(children: const [
-          TableRow(
-            children: [
-              UserCard(
-                color: Colors.blue,
-                icon: Icons.wifi_tethering,
-                text: '  Cerrar sesion',
-              ),
-            ],
-          ),
-        ]),
-      )),
+        color: const Color.fromRGBO(255, 255, 255, 1),
+        shadowColor: Colors.white,
+        child: GestureDetector(
+          onTap:() {
+                setState(() {
+                    Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute<Null>(
+                      builder: (BuildContext context){
+                        return loginPage();
+                      }  
+                    ),(Route<dynamic> route) => false
+
+                  );
+                });
+              },
+          child: Table(children: const [
+            TableRow(
+              children: [
+                CerrarSesion(
+                  text: '  Cerrar sesion',
+                ),
+              ],
+            ),
+          ]),
+        )
+      ),
     );
   }
 }

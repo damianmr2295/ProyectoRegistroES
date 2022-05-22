@@ -44,7 +44,7 @@ class proyectoProvider {
   }
   Future<User> getUserDni(String? dni) async {
     const String urlPeticion = "/user/dni/";
-    final url = Uri.http(urlmain, urlPeticion + "{dni}",  { "dni" : "asdf" });
+    final url = Uri.http(urlmain, urlPeticion + "{dni}",  { "dni" : "$dni" });
     final resp = await http.get(url);
     var decodedData = json.decode(resp.body);
     final user = User.fromJson(decodedData);
