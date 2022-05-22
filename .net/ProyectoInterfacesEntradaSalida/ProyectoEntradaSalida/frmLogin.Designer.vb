@@ -37,24 +37,24 @@ Partial Class frmLogin
         'btnIniciarSesion
         '
         Me.btnIniciarSesion.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.btnIniciarSesion.Location = New System.Drawing.Point(141, 339)
+        Me.btnIniciarSesion.Location = New System.Drawing.Point(163, 343)
         Me.btnIniciarSesion.Name = "btnIniciarSesion"
-        Me.btnIniciarSesion.Size = New System.Drawing.Size(99, 27)
+        Me.btnIniciarSesion.Size = New System.Drawing.Size(118, 27)
         Me.btnIniciarSesion.TabIndex = 2
         Me.btnIniciarSesion.Text = "Iniciar sesion"
         Me.btnIniciarSesion.UseVisualStyleBackColor = False
         '
         'txtUser
         '
-        Me.txtUser.Location = New System.Drawing.Point(121, 240)
+        Me.txtUser.Location = New System.Drawing.Point(143, 244)
         Me.txtUser.Name = "txtUser"
-        Me.txtUser.Size = New System.Drawing.Size(138, 20)
+        Me.txtUser.Size = New System.Drawing.Size(157, 20)
         Me.txtUser.TabIndex = 3
         '
         'labelNombreUsuario
         '
         Me.labelNombreUsuario.AutoSize = True
-        Me.labelNombreUsuario.Location = New System.Drawing.Point(118, 224)
+        Me.labelNombreUsuario.Location = New System.Drawing.Point(140, 228)
         Me.labelNombreUsuario.Name = "labelNombreUsuario"
         Me.labelNombreUsuario.Size = New System.Drawing.Size(71, 13)
         Me.labelNombreUsuario.TabIndex = 4
@@ -63,7 +63,7 @@ Partial Class frmLogin
         'labelContraseña
         '
         Me.labelContraseña.AutoSize = True
-        Me.labelContraseña.Location = New System.Drawing.Point(118, 274)
+        Me.labelContraseña.Location = New System.Drawing.Point(140, 278)
         Me.labelContraseña.Name = "labelContraseña"
         Me.labelContraseña.Size = New System.Drawing.Size(61, 13)
         Me.labelContraseña.TabIndex = 5
@@ -71,10 +71,10 @@ Partial Class frmLogin
         '
         'txtContrasenya
         '
-        Me.txtContrasenya.Location = New System.Drawing.Point(121, 290)
+        Me.txtContrasenya.Location = New System.Drawing.Point(143, 294)
         Me.txtContrasenya.Name = "txtContrasenya"
         Me.txtContrasenya.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.txtContrasenya.Size = New System.Drawing.Size(138, 20)
+        Me.txtContrasenya.Size = New System.Drawing.Size(157, 20)
         Me.txtContrasenya.TabIndex = 6
         Me.txtContrasenya.UseSystemPasswordChar = True
         '
@@ -82,9 +82,9 @@ Partial Class frmLogin
         '
         Me.imgEmpresa.ErrorImage = Global.ProyectoEntradaSalida.My.Resources.Resources.MarcosZaragozaIcono
         Me.imgEmpresa.Image = Global.ProyectoEntradaSalida.My.Resources.Resources.MarcosZaragozaIcono
-        Me.imgEmpresa.Location = New System.Drawing.Point(152, 137)
+        Me.imgEmpresa.Location = New System.Drawing.Point(181, 123)
         Me.imgEmpresa.Name = "imgEmpresa"
-        Me.imgEmpresa.Size = New System.Drawing.Size(78, 68)
+        Me.imgEmpresa.Size = New System.Drawing.Size(96, 81)
         Me.imgEmpresa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.imgEmpresa.TabIndex = 1
         Me.imgEmpresa.TabStop = False
@@ -92,10 +92,9 @@ Partial Class frmLogin
         'imgCabeceraMZ
         '
         Me.imgCabeceraMZ.ErrorImage = CType(resources.GetObject("imgCabeceraMZ.ErrorImage"), System.Drawing.Image)
-        Me.imgCabeceraMZ.Image = Global.ProyectoEntradaSalida.My.Resources.Resources.IESMarcosZaragoza
         Me.imgCabeceraMZ.Location = New System.Drawing.Point(-2, -3)
         Me.imgCabeceraMZ.Name = "imgCabeceraMZ"
-        Me.imgCabeceraMZ.Size = New System.Drawing.Size(434, 99)
+        Me.imgCabeceraMZ.Size = New System.Drawing.Size(476, 86)
         Me.imgCabeceraMZ.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.imgCabeceraMZ.TabIndex = 0
         Me.imgCabeceraMZ.TabStop = False
@@ -105,7 +104,7 @@ Partial Class frmLogin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(430, 452)
+        Me.ClientSize = New System.Drawing.Size(472, 489)
         Me.Controls.Add(Me.txtContrasenya)
         Me.Controls.Add(Me.labelContraseña)
         Me.Controls.Add(Me.labelNombreUsuario)

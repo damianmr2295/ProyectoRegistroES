@@ -39,6 +39,14 @@ Partial Class frmFichar
         Me.btnFichar5 = New System.Windows.Forms.Button()
         Me.btnFichar6 = New System.Windows.Forms.Button()
         Me.labelIniFinAula6 = New System.Windows.Forms.Label()
+        Me.btnFichar8 = New System.Windows.Forms.Button()
+        Me.labelIniFinAula8 = New System.Windows.Forms.Label()
+        Me.btnFichar7 = New System.Windows.Forms.Button()
+        Me.labelIniFinAula7 = New System.Windows.Forms.Label()
+        Me.btnFichar10 = New System.Windows.Forms.Button()
+        Me.labelIniFinAula10 = New System.Windows.Forms.Label()
+        Me.btnFichar9 = New System.Windows.Forms.Button()
+        Me.labelIniFinAula9 = New System.Windows.Forms.Label()
         CType(Me.imgCabeceraMZ, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -46,7 +54,7 @@ Partial Class frmFichar
         '
         Me.labelUsuario.AutoSize = True
         Me.labelUsuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labelUsuario.Location = New System.Drawing.Point(64, 56)
+        Me.labelUsuario.Location = New System.Drawing.Point(106, 54)
         Me.labelUsuario.Name = "labelUsuario"
         Me.labelUsuario.Size = New System.Drawing.Size(183, 20)
         Me.labelUsuario.TabIndex = 4
@@ -55,10 +63,9 @@ Partial Class frmFichar
         'imgCabeceraMZ
         '
         Me.imgCabeceraMZ.ErrorImage = CType(resources.GetObject("imgCabeceraMZ.ErrorImage"), System.Drawing.Image)
-        Me.imgCabeceraMZ.Image = Global.ProyectoEntradaSalida.My.Resources.Resources.IESMarcosZaragoza
         Me.imgCabeceraMZ.Location = New System.Drawing.Point(0, 0)
         Me.imgCabeceraMZ.Name = "imgCabeceraMZ"
-        Me.imgCabeceraMZ.Size = New System.Drawing.Size(429, 86)
+        Me.imgCabeceraMZ.Size = New System.Drawing.Size(632, 86)
         Me.imgCabeceraMZ.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.imgCabeceraMZ.TabIndex = 3
         Me.imgCabeceraMZ.TabStop = False
@@ -88,7 +95,7 @@ Partial Class frmFichar
         Me.labelIniFinAula3.AutoSize = True
         Me.labelIniFinAula3.BackColor = System.Drawing.SystemColors.Control
         Me.labelIniFinAula3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labelIniFinAula3.Location = New System.Drawing.Point(31, 251)
+        Me.labelIniFinAula3.Location = New System.Drawing.Point(94, 251)
         Me.labelIniFinAula3.Name = "labelIniFinAula3"
         Me.labelIniFinAula3.Size = New System.Drawing.Size(21, 20)
         Me.labelIniFinAula3.TabIndex = 7
@@ -99,7 +106,7 @@ Partial Class frmFichar
         Me.labelIniFinAula2.AutoSize = True
         Me.labelIniFinAula2.BackColor = System.Drawing.SystemColors.Control
         Me.labelIniFinAula2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labelIniFinAula2.Location = New System.Drawing.Point(31, 207)
+        Me.labelIniFinAula2.Location = New System.Drawing.Point(94, 207)
         Me.labelIniFinAula2.Name = "labelIniFinAula2"
         Me.labelIniFinAula2.Size = New System.Drawing.Size(21, 20)
         Me.labelIniFinAula2.TabIndex = 8
@@ -110,7 +117,7 @@ Partial Class frmFichar
         Me.labelIniFinAula4.AutoSize = True
         Me.labelIniFinAula4.BackColor = System.Drawing.SystemColors.Control
         Me.labelIniFinAula4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labelIniFinAula4.Location = New System.Drawing.Point(31, 296)
+        Me.labelIniFinAula4.Location = New System.Drawing.Point(94, 296)
         Me.labelIniFinAula4.Name = "labelIniFinAula4"
         Me.labelIniFinAula4.Size = New System.Drawing.Size(21, 20)
         Me.labelIniFinAula4.TabIndex = 9
@@ -121,7 +128,7 @@ Partial Class frmFichar
         Me.labelIniFinAula1.AutoSize = True
         Me.labelIniFinAula1.BackColor = System.Drawing.SystemColors.Control
         Me.labelIniFinAula1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labelIniFinAula1.Location = New System.Drawing.Point(31, 162)
+        Me.labelIniFinAula1.Location = New System.Drawing.Point(94, 162)
         Me.labelIniFinAula1.Name = "labelIniFinAula1"
         Me.labelIniFinAula1.Size = New System.Drawing.Size(195, 20)
         Me.labelIniFinAula1.TabIndex = 10
@@ -132,7 +139,7 @@ Partial Class frmFichar
         Me.labelIniFinAula5.AutoSize = True
         Me.labelIniFinAula5.BackColor = System.Drawing.SystemColors.Control
         Me.labelIniFinAula5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labelIniFinAula5.Location = New System.Drawing.Point(31, 341)
+        Me.labelIniFinAula5.Location = New System.Drawing.Point(94, 341)
         Me.labelIniFinAula5.Name = "labelIniFinAula5"
         Me.labelIniFinAula5.Size = New System.Drawing.Size(21, 20)
         Me.labelIniFinAula5.TabIndex = 11
@@ -141,9 +148,9 @@ Partial Class frmFichar
         'btnFichar1
         '
         Me.btnFichar1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnFichar1.Location = New System.Drawing.Point(329, 159)
+        Me.btnFichar1.Location = New System.Drawing.Point(503, 159)
         Me.btnFichar1.Name = "btnFichar1"
-        Me.btnFichar1.Size = New System.Drawing.Size(100, 26)
+        Me.btnFichar1.Size = New System.Drawing.Size(113, 26)
         Me.btnFichar1.TabIndex = 12
         Me.btnFichar1.Text = "Fichar"
         Me.btnFichar1.UseVisualStyleBackColor = True
@@ -152,9 +159,9 @@ Partial Class frmFichar
         'btnFichar2
         '
         Me.btnFichar2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnFichar2.Location = New System.Drawing.Point(329, 204)
+        Me.btnFichar2.Location = New System.Drawing.Point(503, 204)
         Me.btnFichar2.Name = "btnFichar2"
-        Me.btnFichar2.Size = New System.Drawing.Size(100, 26)
+        Me.btnFichar2.Size = New System.Drawing.Size(113, 26)
         Me.btnFichar2.TabIndex = 13
         Me.btnFichar2.Text = "Fichar"
         Me.btnFichar2.UseVisualStyleBackColor = True
@@ -163,9 +170,9 @@ Partial Class frmFichar
         'btnFichar3
         '
         Me.btnFichar3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnFichar3.Location = New System.Drawing.Point(329, 248)
+        Me.btnFichar3.Location = New System.Drawing.Point(503, 248)
         Me.btnFichar3.Name = "btnFichar3"
-        Me.btnFichar3.Size = New System.Drawing.Size(100, 26)
+        Me.btnFichar3.Size = New System.Drawing.Size(113, 26)
         Me.btnFichar3.TabIndex = 14
         Me.btnFichar3.Text = "Fichar"
         Me.btnFichar3.UseVisualStyleBackColor = True
@@ -174,9 +181,9 @@ Partial Class frmFichar
         'btnFichar4
         '
         Me.btnFichar4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnFichar4.Location = New System.Drawing.Point(329, 293)
+        Me.btnFichar4.Location = New System.Drawing.Point(503, 293)
         Me.btnFichar4.Name = "btnFichar4"
-        Me.btnFichar4.Size = New System.Drawing.Size(100, 26)
+        Me.btnFichar4.Size = New System.Drawing.Size(113, 26)
         Me.btnFichar4.TabIndex = 15
         Me.btnFichar4.Text = "Fichar"
         Me.btnFichar4.UseVisualStyleBackColor = True
@@ -185,9 +192,9 @@ Partial Class frmFichar
         'btnFichar5
         '
         Me.btnFichar5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnFichar5.Location = New System.Drawing.Point(329, 338)
+        Me.btnFichar5.Location = New System.Drawing.Point(503, 338)
         Me.btnFichar5.Name = "btnFichar5"
-        Me.btnFichar5.Size = New System.Drawing.Size(100, 26)
+        Me.btnFichar5.Size = New System.Drawing.Size(113, 26)
         Me.btnFichar5.TabIndex = 16
         Me.btnFichar5.Text = "Fichar"
         Me.btnFichar5.UseVisualStyleBackColor = True
@@ -196,9 +203,9 @@ Partial Class frmFichar
         'btnFichar6
         '
         Me.btnFichar6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnFichar6.Location = New System.Drawing.Point(329, 381)
+        Me.btnFichar6.Location = New System.Drawing.Point(503, 381)
         Me.btnFichar6.Name = "btnFichar6"
-        Me.btnFichar6.Size = New System.Drawing.Size(100, 26)
+        Me.btnFichar6.Size = New System.Drawing.Size(113, 26)
         Me.btnFichar6.TabIndex = 18
         Me.btnFichar6.Text = "Fichar"
         Me.btnFichar6.UseVisualStyleBackColor = True
@@ -209,17 +216,113 @@ Partial Class frmFichar
         Me.labelIniFinAula6.AutoSize = True
         Me.labelIniFinAula6.BackColor = System.Drawing.SystemColors.Control
         Me.labelIniFinAula6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labelIniFinAula6.Location = New System.Drawing.Point(31, 384)
+        Me.labelIniFinAula6.Location = New System.Drawing.Point(94, 384)
         Me.labelIniFinAula6.Name = "labelIniFinAula6"
         Me.labelIniFinAula6.Size = New System.Drawing.Size(21, 20)
         Me.labelIniFinAula6.TabIndex = 17
         Me.labelIniFinAula6.Text = "   "
         '
+        'btnFichar8
+        '
+        Me.btnFichar8.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnFichar8.Location = New System.Drawing.Point(503, 467)
+        Me.btnFichar8.Name = "btnFichar8"
+        Me.btnFichar8.Size = New System.Drawing.Size(113, 26)
+        Me.btnFichar8.TabIndex = 22
+        Me.btnFichar8.Text = "Fichar"
+        Me.btnFichar8.UseVisualStyleBackColor = True
+        Me.btnFichar8.Visible = False
+        '
+        'labelIniFinAula8
+        '
+        Me.labelIniFinAula8.AutoSize = True
+        Me.labelIniFinAula8.BackColor = System.Drawing.SystemColors.Control
+        Me.labelIniFinAula8.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labelIniFinAula8.Location = New System.Drawing.Point(94, 470)
+        Me.labelIniFinAula8.Name = "labelIniFinAula8"
+        Me.labelIniFinAula8.Size = New System.Drawing.Size(21, 20)
+        Me.labelIniFinAula8.TabIndex = 21
+        Me.labelIniFinAula8.Text = "   "
+        '
+        'btnFichar7
+        '
+        Me.btnFichar7.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnFichar7.Location = New System.Drawing.Point(503, 424)
+        Me.btnFichar7.Name = "btnFichar7"
+        Me.btnFichar7.Size = New System.Drawing.Size(113, 26)
+        Me.btnFichar7.TabIndex = 20
+        Me.btnFichar7.Text = "Fichar"
+        Me.btnFichar7.UseVisualStyleBackColor = True
+        Me.btnFichar7.Visible = False
+        '
+        'labelIniFinAula7
+        '
+        Me.labelIniFinAula7.AutoSize = True
+        Me.labelIniFinAula7.BackColor = System.Drawing.SystemColors.Control
+        Me.labelIniFinAula7.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labelIniFinAula7.Location = New System.Drawing.Point(94, 427)
+        Me.labelIniFinAula7.Name = "labelIniFinAula7"
+        Me.labelIniFinAula7.Size = New System.Drawing.Size(21, 20)
+        Me.labelIniFinAula7.TabIndex = 19
+        Me.labelIniFinAula7.Text = "   "
+        '
+        'btnFichar10
+        '
+        Me.btnFichar10.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnFichar10.Location = New System.Drawing.Point(503, 555)
+        Me.btnFichar10.Name = "btnFichar10"
+        Me.btnFichar10.Size = New System.Drawing.Size(113, 26)
+        Me.btnFichar10.TabIndex = 26
+        Me.btnFichar10.Text = "Fichar"
+        Me.btnFichar10.UseVisualStyleBackColor = True
+        Me.btnFichar10.Visible = False
+        '
+        'labelIniFinAula10
+        '
+        Me.labelIniFinAula10.AutoSize = True
+        Me.labelIniFinAula10.BackColor = System.Drawing.SystemColors.Control
+        Me.labelIniFinAula10.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labelIniFinAula10.Location = New System.Drawing.Point(94, 558)
+        Me.labelIniFinAula10.Name = "labelIniFinAula10"
+        Me.labelIniFinAula10.Size = New System.Drawing.Size(21, 20)
+        Me.labelIniFinAula10.TabIndex = 25
+        Me.labelIniFinAula10.Text = "   "
+        '
+        'btnFichar9
+        '
+        Me.btnFichar9.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnFichar9.Location = New System.Drawing.Point(503, 512)
+        Me.btnFichar9.Name = "btnFichar9"
+        Me.btnFichar9.Size = New System.Drawing.Size(113, 26)
+        Me.btnFichar9.TabIndex = 24
+        Me.btnFichar9.Text = "Fichar"
+        Me.btnFichar9.UseVisualStyleBackColor = True
+        Me.btnFichar9.Visible = False
+        '
+        'labelIniFinAula9
+        '
+        Me.labelIniFinAula9.AutoSize = True
+        Me.labelIniFinAula9.BackColor = System.Drawing.SystemColors.Control
+        Me.labelIniFinAula9.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labelIniFinAula9.Location = New System.Drawing.Point(94, 515)
+        Me.labelIniFinAula9.Name = "labelIniFinAula9"
+        Me.labelIniFinAula9.Size = New System.Drawing.Size(21, 20)
+        Me.labelIniFinAula9.TabIndex = 23
+        Me.labelIniFinAula9.Text = "   "
+        '
         'frmFichar
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(448, 452)
+        Me.ClientSize = New System.Drawing.Size(628, 616)
+        Me.Controls.Add(Me.btnFichar10)
+        Me.Controls.Add(Me.labelIniFinAula10)
+        Me.Controls.Add(Me.btnFichar9)
+        Me.Controls.Add(Me.labelIniFinAula9)
+        Me.Controls.Add(Me.btnFichar8)
+        Me.Controls.Add(Me.labelIniFinAula8)
+        Me.Controls.Add(Me.btnFichar7)
+        Me.Controls.Add(Me.labelIniFinAula7)
         Me.Controls.Add(Me.btnFichar6)
         Me.Controls.Add(Me.labelIniFinAula6)
         Me.Controls.Add(Me.btnFichar5)
@@ -260,4 +363,12 @@ Partial Class frmFichar
     Friend WithEvents btnFichar5 As Button
     Friend WithEvents btnFichar6 As Button
     Friend WithEvents labelIniFinAula6 As Label
+    Friend WithEvents btnFichar8 As Button
+    Friend WithEvents labelIniFinAula8 As Label
+    Friend WithEvents btnFichar7 As Button
+    Friend WithEvents labelIniFinAula7 As Label
+    Friend WithEvents btnFichar10 As Button
+    Friend WithEvents labelIniFinAula10 As Label
+    Friend WithEvents btnFichar9 As Button
+    Friend WithEvents labelIniFinAula9 As Label
 End Class

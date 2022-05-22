@@ -25,7 +25,6 @@ Partial Class frmPrincipal
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmPrincipal))
         Me.labelUsuario = New System.Windows.Forms.Label()
         Me.btnFichar = New System.Windows.Forms.Button()
-        Me.btnSolicitar = New System.Windows.Forms.Button()
         Me.btnHorario = New System.Windows.Forms.Button()
         Me.btnCerrarSesion = New System.Windows.Forms.Button()
         Me.btnBuscar = New System.Windows.Forms.Button()
@@ -38,7 +37,7 @@ Partial Class frmPrincipal
         '
         Me.labelUsuario.AutoSize = True
         Me.labelUsuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labelUsuario.Location = New System.Drawing.Point(64, 57)
+        Me.labelUsuario.Location = New System.Drawing.Point(96, 76)
         Me.labelUsuario.Name = "labelUsuario"
         Me.labelUsuario.Size = New System.Drawing.Size(183, 20)
         Me.labelUsuario.TabIndex = 2
@@ -47,29 +46,19 @@ Partial Class frmPrincipal
         'btnFichar
         '
         Me.btnFichar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnFichar.Location = New System.Drawing.Point(59, 142)
+        Me.btnFichar.Location = New System.Drawing.Point(121, 165)
         Me.btnFichar.Name = "btnFichar"
-        Me.btnFichar.Size = New System.Drawing.Size(132, 40)
+        Me.btnFichar.Size = New System.Drawing.Size(158, 59)
         Me.btnFichar.TabIndex = 3
         Me.btnFichar.Text = "Fichar"
         Me.btnFichar.UseVisualStyleBackColor = True
         '
-        'btnSolicitar
-        '
-        Me.btnSolicitar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSolicitar.Location = New System.Drawing.Point(226, 142)
-        Me.btnSolicitar.Name = "btnSolicitar"
-        Me.btnSolicitar.Size = New System.Drawing.Size(132, 40)
-        Me.btnSolicitar.TabIndex = 4
-        Me.btnSolicitar.Text = "Solicitar"
-        Me.btnSolicitar.UseVisualStyleBackColor = True
-        '
         'btnHorario
         '
         Me.btnHorario.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnHorario.Location = New System.Drawing.Point(59, 221)
+        Me.btnHorario.Location = New System.Drawing.Point(121, 290)
         Me.btnHorario.Name = "btnHorario"
-        Me.btnHorario.Size = New System.Drawing.Size(132, 40)
+        Me.btnHorario.Size = New System.Drawing.Size(158, 59)
         Me.btnHorario.TabIndex = 5
         Me.btnHorario.Text = "Horario"
         Me.btnHorario.UseVisualStyleBackColor = True
@@ -77,9 +66,9 @@ Partial Class frmPrincipal
         'btnCerrarSesion
         '
         Me.btnCerrarSesion.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCerrarSesion.Location = New System.Drawing.Point(226, 221)
+        Me.btnCerrarSesion.Location = New System.Drawing.Point(121, 425)
         Me.btnCerrarSesion.Name = "btnCerrarSesion"
-        Me.btnCerrarSesion.Size = New System.Drawing.Size(132, 40)
+        Me.btnCerrarSesion.Size = New System.Drawing.Size(158, 59)
         Me.btnCerrarSesion.TabIndex = 6
         Me.btnCerrarSesion.Text = "Cerrar sesión"
         Me.btnCerrarSesion.UseVisualStyleBackColor = True
@@ -87,9 +76,9 @@ Partial Class frmPrincipal
         'btnBuscar
         '
         Me.btnBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnBuscar.Location = New System.Drawing.Point(59, 300)
+        Me.btnBuscar.Location = New System.Drawing.Point(383, 165)
         Me.btnBuscar.Name = "btnBuscar"
-        Me.btnBuscar.Size = New System.Drawing.Size(132, 40)
+        Me.btnBuscar.Size = New System.Drawing.Size(158, 59)
         Me.btnBuscar.TabIndex = 9
         Me.btnBuscar.Text = "Buscar"
         Me.btnBuscar.UseVisualStyleBackColor = True
@@ -98,7 +87,7 @@ Partial Class frmPrincipal
         '
         Me.labelUltimaConexion.AutoSize = True
         Me.labelUltimaConexion.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labelUltimaConexion.Location = New System.Drawing.Point(232, 311)
+        Me.labelUltimaConexion.Location = New System.Drawing.Point(400, 310)
         Me.labelUltimaConexion.Name = "labelUltimaConexion"
         Me.labelUltimaConexion.Size = New System.Drawing.Size(114, 18)
         Me.labelUltimaConexion.TabIndex = 10
@@ -107,10 +96,9 @@ Partial Class frmPrincipal
         'imgCabeceraMZ
         '
         Me.imgCabeceraMZ.ErrorImage = CType(resources.GetObject("imgCabeceraMZ.ErrorImage"), System.Drawing.Image)
-        Me.imgCabeceraMZ.Image = Global.ProyectoEntradaSalida.My.Resources.Resources.IESMarcosZaragoza
         Me.imgCabeceraMZ.Location = New System.Drawing.Point(0, 1)
         Me.imgCabeceraMZ.Name = "imgCabeceraMZ"
-        Me.imgCabeceraMZ.Size = New System.Drawing.Size(429, 86)
+        Me.imgCabeceraMZ.Size = New System.Drawing.Size(627, 113)
         Me.imgCabeceraMZ.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.imgCabeceraMZ.TabIndex = 1
         Me.imgCabeceraMZ.TabStop = False
@@ -120,12 +108,11 @@ Partial Class frmPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(430, 452)
+        Me.ClientSize = New System.Drawing.Size(628, 616)
         Me.Controls.Add(Me.labelUltimaConexion)
         Me.Controls.Add(Me.btnBuscar)
         Me.Controls.Add(Me.btnCerrarSesion)
         Me.Controls.Add(Me.btnHorario)
-        Me.Controls.Add(Me.btnSolicitar)
         Me.Controls.Add(Me.btnFichar)
         Me.Controls.Add(Me.labelUsuario)
         Me.Controls.Add(Me.imgCabeceraMZ)
@@ -140,7 +127,6 @@ Partial Class frmPrincipal
     Friend WithEvents imgCabeceraMZ As PictureBox
     Friend WithEvents labelUsuario As Label
     Friend WithEvents btnFichar As Button
-    Friend WithEvents btnSolicitar As Button
     Friend WithEvents btnHorario As Button
     Friend WithEvents btnCerrarSesion As Button
     Friend WithEvents btnBuscar As Button

@@ -1,5 +1,8 @@
-﻿Public Class frmPrincipal
-    Dim restApi = New restAPI
+﻿Imports System.IO
+Imports System.Net
+
+Public Class frmPrincipal
+    Dim restApi = New RestAPI
     Private Sub btnCerrarSesion_Click(sender As Object, e As EventArgs) Handles btnCerrarSesion.Click
         frmPrincipal.ActiveForm.Hide()
         frmLogin.Show()
@@ -18,6 +21,14 @@
     End Sub
 
     Private Sub frmPrincipal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim url As String = "https://portal.edu.gva.es/iesmarcoszaragoza/wp-content/uploads/sites/256/2021/04/cabecera-k-fondocolores2-nologos-cdc.png"
+
+        Dim wc As New WebClient
+        Dim bytes() As Byte = wc.DownloadData(url)
+        Dim ImgStream As New MemoryStream(bytes)
+
+        imgCabeceraMZ.Image = Image.FromStream(ImgStream)
+
         Dim user = restApi.userDni()
         labelUsuario.Text = "Usuario: " + user.nombre
         ultimaConexion(user)

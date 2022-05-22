@@ -1,4 +1,5 @@
-﻿Imports Newtonsoft.Json
+﻿Imports System.Net
+Imports System.IO
 
 Public Class frmBuscar
     Dim restApi = New RestAPI
@@ -8,6 +9,14 @@ Public Class frmBuscar
     End Sub
 
     Private Sub frmBuscar_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim url As String = "https://portal.edu.gva.es/iesmarcoszaragoza/wp-content/uploads/sites/256/2021/04/cabecera-k-fondocolores2-nologos-cdc.png"
+
+        Dim wc As New WebClient
+        Dim bytes() As Byte = wc.DownloadData(url)
+        Dim ImgStream As New MemoryStream(bytes)
+
+        imgCabeceraMZ.Image = Image.FromStream(ImgStream)
+
         labelUsuario.Text = "Usuario: " + restApi.userDni().nombre
     End Sub
 

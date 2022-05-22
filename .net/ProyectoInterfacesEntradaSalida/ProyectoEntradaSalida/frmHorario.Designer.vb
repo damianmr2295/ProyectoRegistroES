@@ -34,10 +34,9 @@ Partial Class frmHorario
         'imgCabeceraMZ
         '
         Me.imgCabeceraMZ.ErrorImage = CType(resources.GetObject("imgCabeceraMZ.ErrorImage"), System.Drawing.Image)
-        Me.imgCabeceraMZ.Image = Global.ProyectoEntradaSalida.My.Resources.Resources.IESMarcosZaragoza
         Me.imgCabeceraMZ.Location = New System.Drawing.Point(1, -1)
         Me.imgCabeceraMZ.Name = "imgCabeceraMZ"
-        Me.imgCabeceraMZ.Size = New System.Drawing.Size(567, 86)
+        Me.imgCabeceraMZ.Size = New System.Drawing.Size(873, 115)
         Me.imgCabeceraMZ.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.imgCabeceraMZ.TabIndex = 2
         Me.imgCabeceraMZ.TabStop = False
@@ -46,14 +45,14 @@ Partial Class frmHorario
         'DataGridView1
         '
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(12, 132)
+        Me.DataGridView1.Location = New System.Drawing.Point(12, 204)
         Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(544, 306)
+        Me.DataGridView1.Size = New System.Drawing.Size(847, 390)
         Me.DataGridView1.TabIndex = 22
         '
         'btnAtras
         '
-        Me.btnAtras.Location = New System.Drawing.Point(12, 91)
+        Me.btnAtras.Location = New System.Drawing.Point(12, 137)
         Me.btnAtras.Name = "btnAtras"
         Me.btnAtras.Size = New System.Drawing.Size(75, 23)
         Me.btnAtras.TabIndex = 23
@@ -64,7 +63,7 @@ Partial Class frmHorario
         '
         Me.labelUsuario.AutoSize = True
         Me.labelUsuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labelUsuario.Location = New System.Drawing.Point(88, 56)
+        Me.labelUsuario.Location = New System.Drawing.Point(119, 78)
         Me.labelUsuario.Name = "labelUsuario"
         Me.labelUsuario.Size = New System.Drawing.Size(183, 20)
         Me.labelUsuario.TabIndex = 24
@@ -74,7 +73,7 @@ Partial Class frmHorario
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(568, 450)
+        Me.ClientSize = New System.Drawing.Size(871, 654)
         Me.Controls.Add(Me.labelUsuario)
         Me.Controls.Add(Me.btnAtras)
         Me.Controls.Add(Me.DataGridView1)

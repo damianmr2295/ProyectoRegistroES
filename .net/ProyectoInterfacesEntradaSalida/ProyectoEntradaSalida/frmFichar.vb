@@ -1,8 +1,17 @@
-﻿Imports Newtonsoft.Json
+﻿Imports System.Net
+Imports System.IO
 
 Public Class frmFichar
     Dim restApi = New RestAPI
     Private Sub frmFichar_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim url As String = "https://portal.edu.gva.es/iesmarcoszaragoza/wp-content/uploads/sites/256/2021/04/cabecera-k-fondocolores2-nologos-cdc.png"
+
+        Dim wc As New WebClient
+        Dim bytes() As Byte = wc.DownloadData(url)
+        Dim ImgStream As New MemoryStream(bytes)
+
+        imgCabeceraMZ.Image = Image.FromStream(ImgStream)
+
         Dim fechaActual As Date = Date.Now
         Dim cont = 0
         Dim listaLabel = Labels()
@@ -110,6 +119,64 @@ Public Class frmFichar
         restApi.ficharHora(ficha)
         Refresh()
     End Sub
+    Private Sub btnFichar7_Click(sender As Object, e As EventArgs) Handles btnFichar7.Click
+        Dim fichas = restApi.fichaHorario(labelDiaActual.Text)
+        Dim ficha = fichas(6)
+        If ficha.fichado Then
+            ficha.fichado = False
+            labelIniFinAula7.BackColor = Color.FromArgb(255, 192, 192)
+        Else
+            ficha.fichado = True
+            labelIniFinAula7.BackColor = Color.FromArgb(192, 255, 192)
+        End If
+
+        restApi.ficharHora(ficha)
+        Refresh()
+    End Sub
+
+    Private Sub btnFichar8_Click(sender As Object, e As EventArgs) Handles btnFichar8.Click
+        Dim fichas = restApi.fichaHorario(labelDiaActual.Text)
+        Dim ficha = fichas(7)
+        If ficha.fichado Then
+            ficha.fichado = False
+            labelIniFinAula8.BackColor = Color.FromArgb(255, 192, 192)
+        Else
+            ficha.fichado = True
+            labelIniFinAula8.BackColor = Color.FromArgb(192, 255, 192)
+        End If
+
+        restApi.ficharHora(ficha)
+        Refresh()
+    End Sub
+    Private Sub btnFichar9_Click(sender As Object, e As EventArgs) Handles btnFichar9.Click
+        Dim fichas = restApi.fichaHorario(labelDiaActual.Text)
+        Dim ficha = fichas(8)
+        If ficha.fichado Then
+            ficha.fichado = False
+            labelIniFinAula9.BackColor = Color.FromArgb(255, 192, 192)
+        Else
+            ficha.fichado = True
+            labelIniFinAula9.BackColor = Color.FromArgb(192, 255, 192)
+        End If
+
+        restApi.ficharHora(ficha)
+        Refresh()
+    End Sub
+
+    Private Sub btnFichar10_Click(sender As Object, e As EventArgs) Handles btnFichar10.Click
+        Dim fichas = restApi.fichaHorario(labelDiaActual.Text)
+        Dim ficha = fichas(9)
+        If ficha.fichado Then
+            ficha.fichado = False
+            labelIniFinAula10.BackColor = Color.FromArgb(255, 192, 192)
+        Else
+            ficha.fichado = True
+            labelIniFinAula10.BackColor = Color.FromArgb(192, 255, 192)
+        End If
+
+        restApi.ficharHora(ficha)
+        Refresh()
+    End Sub
     Private Sub btnAtras_Click(sender As Object, e As EventArgs) Handles btnAtras.Click
         Dim user = restApi.userDni()
         frmFichar.ActiveForm.Hide()
@@ -124,6 +191,11 @@ Public Class frmFichar
         listaLabel.Add(labelIniFinAula4)
         listaLabel.Add(labelIniFinAula5)
         listaLabel.Add(labelIniFinAula6)
+        listaLabel.Add(labelIniFinAula7)
+        listaLabel.Add(labelIniFinAula8)
+        listaLabel.Add(labelIniFinAula9)
+        listaLabel.Add(labelIniFinAula10)
+
         Return listaLabel
     End Function
     Function Buttons() As List(Of Button)
@@ -134,6 +206,11 @@ Public Class frmFichar
         listaButton.Add(btnFichar4)
         listaButton.Add(btnFichar5)
         listaButton.Add(btnFichar6)
+        listaButton.Add(btnFichar7)
+        listaButton.Add(btnFichar8)
+        listaButton.Add(btnFichar9)
+        listaButton.Add(btnFichar10)
         Return listaButton
     End Function
+
 End Class

@@ -1,7 +1,17 @@
-﻿Public Class frmHorario
+﻿Imports System.IO
+Imports System.Net
+
+Public Class frmHorario
     Dim restApi = New RestAPI
 
     Private Sub frmHorario_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim url As String = "https://portal.edu.gva.es/iesmarcoszaragoza/wp-content/uploads/sites/256/2021/04/cabecera-k-fondocolores2-nologos-cdc.png"
+
+        Dim wc As New WebClient
+        Dim bytes() As Byte = wc.DownloadData(url)
+        Dim ImgStream As New MemoryStream(bytes)
+
+        imgCabeceraMZ.Image = Image.FromStream(ImgStream)
         Dim user = restApi.userDni()
         labelUsuario.Text = "Usuario: " + user.nombre
         Dim fecha As Date = Date.Now

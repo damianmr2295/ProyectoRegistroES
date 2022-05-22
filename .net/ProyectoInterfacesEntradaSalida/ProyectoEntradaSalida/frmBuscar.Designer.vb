@@ -43,7 +43,7 @@ Partial Class frmBuscar
         '
         'btnAtras
         '
-        Me.btnAtras.Location = New System.Drawing.Point(12, 92)
+        Me.btnAtras.Location = New System.Drawing.Point(12, 101)
         Me.btnAtras.Name = "btnAtras"
         Me.btnAtras.Size = New System.Drawing.Size(75, 23)
         Me.btnAtras.TabIndex = 6
@@ -54,7 +54,7 @@ Partial Class frmBuscar
         '
         Me.labelUsuario.AutoSize = True
         Me.labelUsuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labelUsuario.Location = New System.Drawing.Point(65, 56)
+        Me.labelUsuario.Location = New System.Drawing.Point(91, 55)
         Me.labelUsuario.Name = "labelUsuario"
         Me.labelUsuario.Size = New System.Drawing.Size(183, 20)
         Me.labelUsuario.TabIndex = 8
@@ -63,10 +63,9 @@ Partial Class frmBuscar
         'imgCabeceraMZ
         '
         Me.imgCabeceraMZ.ErrorImage = CType(resources.GetObject("imgCabeceraMZ.ErrorImage"), System.Drawing.Image)
-        Me.imgCabeceraMZ.Image = Global.ProyectoEntradaSalida.My.Resources.Resources.IESMarcosZaragoza
         Me.imgCabeceraMZ.Location = New System.Drawing.Point(1, 0)
         Me.imgCabeceraMZ.Name = "imgCabeceraMZ"
-        Me.imgCabeceraMZ.Size = New System.Drawing.Size(429, 86)
+        Me.imgCabeceraMZ.Size = New System.Drawing.Size(628, 86)
         Me.imgCabeceraMZ.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.imgCabeceraMZ.TabIndex = 7
         Me.imgCabeceraMZ.TabStop = False
@@ -76,7 +75,7 @@ Partial Class frmBuscar
         '
         Me.rbtnProfesor.AutoSize = True
         Me.rbtnProfesor.Checked = True
-        Me.rbtnProfesor.Location = New System.Drawing.Point(67, 140)
+        Me.rbtnProfesor.Location = New System.Drawing.Point(68, 162)
         Me.rbtnProfesor.Name = "rbtnProfesor"
         Me.rbtnProfesor.Size = New System.Drawing.Size(64, 17)
         Me.rbtnProfesor.TabIndex = 9
@@ -87,7 +86,7 @@ Partial Class frmBuscar
         'rbtnAula
         '
         Me.rbtnAula.AutoSize = True
-        Me.rbtnAula.Location = New System.Drawing.Point(179, 140)
+        Me.rbtnAula.Location = New System.Drawing.Point(228, 162)
         Me.rbtnAula.Name = "rbtnAula"
         Me.rbtnAula.Size = New System.Drawing.Size(46, 17)
         Me.rbtnAula.TabIndex = 10
@@ -97,7 +96,7 @@ Partial Class frmBuscar
         'labelNombre
         '
         Me.labelNombre.AutoSize = True
-        Me.labelNombre.Location = New System.Drawing.Point(43, 183)
+        Me.labelNombre.Location = New System.Drawing.Point(67, 205)
         Me.labelNombre.Name = "labelNombre"
         Me.labelNombre.Size = New System.Drawing.Size(44, 13)
         Me.labelNombre.TabIndex = 11
@@ -107,7 +106,7 @@ Partial Class frmBuscar
         '
         Me.labelHoraIni.AutoSize = True
         Me.labelHoraIni.Enabled = False
-        Me.labelHoraIni.Location = New System.Drawing.Point(43, 258)
+        Me.labelHoraIni.Location = New System.Drawing.Point(67, 280)
         Me.labelHoraIni.Name = "labelHoraIni"
         Me.labelHoraIni.Size = New System.Drawing.Size(98, 13)
         Me.labelHoraIni.TabIndex = 12
@@ -115,14 +114,14 @@ Partial Class frmBuscar
         '
         'txtNombre
         '
-        Me.txtNombre.Location = New System.Drawing.Point(161, 180)
+        Me.txtNombre.Location = New System.Drawing.Point(315, 202)
         Me.txtNombre.Name = "txtNombre"
-        Me.txtNombre.Size = New System.Drawing.Size(224, 20)
+        Me.txtNombre.Size = New System.Drawing.Size(277, 20)
         Me.txtNombre.TabIndex = 13
         '
         'btnBuscar
         '
-        Me.btnBuscar.Location = New System.Drawing.Point(324, 461)
+        Me.btnBuscar.Location = New System.Drawing.Point(517, 563)
         Me.btnBuscar.Name = "btnBuscar"
         Me.btnBuscar.Size = New System.Drawing.Size(75, 23)
         Me.btnBuscar.TabIndex = 16
@@ -132,9 +131,9 @@ Partial Class frmBuscar
         'DataGridView1
         '
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(24, 293)
+        Me.DataGridView1.Location = New System.Drawing.Point(47, 335)
         Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(394, 150)
+        Me.DataGridView1.Size = New System.Drawing.Size(545, 212)
         Me.DataGridView1.TabIndex = 21
         '
         'comBoxHoraInic
@@ -143,23 +142,23 @@ Partial Class frmBuscar
         Me.comBoxHoraInic.Enabled = False
         Me.comBoxHoraInic.FormattingEnabled = True
         Me.comBoxHoraInic.Items.AddRange(New Object() {"08:00 h - 09:00 h", "09:00 h - 10:00 h", "10:00 h - 11:00 h", "11:00 h - 12:00 h", "12:00 h - 13:00 h", "13:00 h - 14:00 h"})
-        Me.comBoxHoraInic.Location = New System.Drawing.Point(161, 255)
+        Me.comBoxHoraInic.Location = New System.Drawing.Point(315, 277)
         Me.comBoxHoraInic.Name = "comBoxHoraInic"
-        Me.comBoxHoraInic.Size = New System.Drawing.Size(224, 21)
+        Me.comBoxHoraInic.Size = New System.Drawing.Size(277, 21)
         Me.comBoxHoraInic.TabIndex = 19
         Me.comBoxHoraInic.Text = "08:00 h - 09:00 h"
         '
         'fecha
         '
-        Me.fecha.Location = New System.Drawing.Point(161, 218)
+        Me.fecha.Location = New System.Drawing.Point(315, 240)
         Me.fecha.Name = "fecha"
-        Me.fecha.Size = New System.Drawing.Size(224, 20)
+        Me.fecha.Size = New System.Drawing.Size(277, 20)
         Me.fecha.TabIndex = 24
         '
         'labelFecha
         '
         Me.labelFecha.AutoSize = True
-        Me.labelFecha.Location = New System.Drawing.Point(43, 224)
+        Me.labelFecha.Location = New System.Drawing.Point(67, 246)
         Me.labelFecha.Name = "labelFecha"
         Me.labelFecha.Size = New System.Drawing.Size(37, 13)
         Me.labelFecha.TabIndex = 23
@@ -168,7 +167,7 @@ Partial Class frmBuscar
         'rbtnNoFichados
         '
         Me.rbtnNoFichados.AutoSize = True
-        Me.rbtnNoFichados.Location = New System.Drawing.Point(266, 140)
+        Me.rbtnNoFichados.Location = New System.Drawing.Point(397, 162)
         Me.rbtnNoFichados.Name = "rbtnNoFichados"
         Me.rbtnNoFichados.Size = New System.Drawing.Size(133, 17)
         Me.rbtnNoFichados.TabIndex = 25
@@ -179,7 +178,7 @@ Partial Class frmBuscar
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(430, 496)
+        Me.ClientSize = New System.Drawing.Size(628, 616)
         Me.Controls.Add(Me.rbtnNoFichados)
         Me.Controls.Add(Me.fecha)
         Me.Controls.Add(Me.labelFecha)
