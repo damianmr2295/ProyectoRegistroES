@@ -33,10 +33,9 @@ class _principalPageState extends State<principalPage> {
         controller: pageController,
         physics: NeverScrollableScrollPhysics(),
         children: [ 
-        bodyHome(widget.userNombre),
+        bodyHome(widget.userNombre, widget.userDni),
         bodyFichar(widget.userNombre),
         bodyPerfil(widget.userDni),
-
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(

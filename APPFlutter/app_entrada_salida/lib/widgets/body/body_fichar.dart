@@ -1,6 +1,6 @@
 import 'dart:ui';
 import 'package:intl/intl.dart';
-import 'package:app_entrada_salida/providers/horario_providers.dart';
+import 'package:app_entrada_salida/providers/proyecto_providers.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -53,8 +53,8 @@ class bodyFicharPageState extends State<bodyFichar> {
 
   Widget tarjetaFicha(List<dynamic> fichado) {
     final fichasProvider = proyectoProvider();
-    DateTime now = DateTime.now();
-    String fechaActual = DateFormat('yyyy-MM-dd').format(now);
+    DateTime dia = DateTime.now();
+    String fechaActual = DateFormat('yyyy-MM-dd').format(dia);
     return Column(
       children: [
         ListView.builder(

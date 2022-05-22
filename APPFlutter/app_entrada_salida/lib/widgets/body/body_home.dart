@@ -1,24 +1,28 @@
 import 'dart:ui';
 import 'package:app_entrada_salida/models/ficha.dart';
+import 'package:app_entrada_salida/pages/horario_page.dart';
+import 'package:app_entrada_salida/widgets/card/horario_card.dart';
 import 'package:app_entrada_salida/widgets/card/single_card.dart';
 import 'package:app_entrada_salida/widgets/card/top_card.dart';
 import 'package:intl/intl.dart';
-import 'package:app_entrada_salida/providers/horario_providers.dart';
+import 'package:app_entrada_salida/providers/proyecto_providers.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class bodyHome extends StatefulWidget {
   String? usuario;
-  bodyHome(this.usuario);
+  String? dni;
+  bodyHome(this.usuario, this.dni);
   @override
   State<bodyHome> createState() {
-    return bodyFicharPageState(usuario);
+    return bodyFicharPageState(usuario, dni);
   }
 }
 
 class bodyFicharPageState extends State<bodyHome> {
   String? usuario;
-  bodyFicharPageState(this.usuario);
+  String? dni;
+  bodyFicharPageState(this.usuario, this.dni);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,7 +33,7 @@ class bodyFicharPageState extends State<bodyHome> {
           Column(
             children: [
               const Divider(),
-              crearFicha(usuario),
+              crearBody(usuario),
             ],
           ),
           const Divider(),
@@ -38,7 +42,7 @@ class bodyFicharPageState extends State<bodyHome> {
     );
   }
 
-  Widget crearFicha(String? usuario) {
+  Widget crearBody(String? usuario) {
     final fichasProvider = proyectoProvider();
     Future<List<Ficha>> fichas = fichasProvider.getinfoFichar();
     return FutureBuilder(
@@ -109,26 +113,27 @@ class bodyFicharPageState extends State<bodyHome> {
       padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
       height: 180,
       child: Card(
-          child: GestureDetector(
-        child: Table(children: [
-          const TableRow(
-            children: [
-              TopCard(
-                color: Colors.blue,
-                icon: Icons.wifi_tethering,
-                text: '  Notificaciones',
-              ),
-            ],
-          ),
-          TableRow(
-            children: [
-              SingleCard(
-                text: notificacion,
-              ),
-            ],
-          ),
-        ]),
-      )),
+        child: GestureDetector(
+          child: Table(children: [
+            const TableRow(
+              children: [
+                TopCard(
+                  color: Colors.blue,
+                  icon: Icons.message,
+                  text: '  Notificaciones',
+                ),
+              ],
+            ),
+            TableRow(
+              children: [
+                SingleCard(
+                  text: notificacion,
+                ),
+              ],
+            ),
+          ]),
+        )
+      ),
     );
   }
 
@@ -137,25 +142,34 @@ class bodyFicharPageState extends State<bodyHome> {
       padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
       height: 180,
       child: Card(
-          child: GestureDetector(
-        child: Table(children: const [
-          TableRow(
-            children: [
-              TopCard(
-                color: Colors.blue,
-                icon: Icons.wifi_tethering,
-                text: '  Horario',
-              ),
-            ],
-          ),
-          TableRow(
-            children: [
-              SingleCard(
-                text: "Horario",
-              ),
-            ],
-          ),
-        ]),
+        child: GestureDetector(
+          onTap:() {
+              Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute<Null>(
+                builder: (BuildContext context){
+                  return new HorarioPage(usuario, DateTime.now(), dni);
+                }  
+            ),(Route<dynamic> route) => false
+
+          );
+          },
+          child: Table(children: const [
+            TableRow(
+              children: [
+                TopCard(
+                  color: Colors.blue,
+                  icon: Icons.calendar_view_month_rounded,
+                  text: '  Horario',
+                ),
+              ],
+            ),
+            TableRow(
+              children: [
+                Horario(
+                  text: "Tu horario semanal",
+                ),
+              ],
+            ),
+          ]),
       )),
     );
   }

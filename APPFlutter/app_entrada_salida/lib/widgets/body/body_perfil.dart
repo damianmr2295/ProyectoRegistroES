@@ -1,12 +1,8 @@
-import 'package:app_entrada_salida/models/ficha.dart';
 import 'package:app_entrada_salida/models/user.dart';
 import 'package:app_entrada_salida/pages/login_page.dart';
 import 'package:app_entrada_salida/widgets/card/cerrar_sesion_card.dart';
-import 'package:app_entrada_salida/widgets/card/single_card.dart';
-import 'package:app_entrada_salida/widgets/card/top_card.dart';
 import 'package:app_entrada_salida/widgets/card/user_card.dart';
-import 'package:intl/intl.dart';
-import 'package:app_entrada_salida/providers/horario_providers.dart';
+import 'package:app_entrada_salida/providers/proyecto_providers.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -24,8 +20,6 @@ class bodyPerfilPageState extends State<bodyPerfil> {
   
  @override
   Widget build(BuildContext context) {
-        print(widget.userDni);
-
     return Scaffold(
       body: ListView(
         padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 2),

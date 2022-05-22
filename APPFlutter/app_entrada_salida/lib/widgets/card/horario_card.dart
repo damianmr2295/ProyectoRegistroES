@@ -1,14 +1,11 @@
 import 'dart:ui';
 
-import 'package:app_entrada_salida/models/ficha.dart';
-import 'package:app_entrada_salida/providers/proyecto_providers.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 
-class SingleCard extends StatelessWidget {
+class Horario extends StatelessWidget {
   final String text;
-  const SingleCard(
+  const Horario(
       {Key? key,required this.text})
       : super(key: key);
   @override
