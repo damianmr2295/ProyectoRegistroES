@@ -1,0 +1,6 @@
+servidor=127.0.0.127
+puerto=3306
+basededatos=proyectoentradasalida
+driver=com.mysql.cj.jdbc.Driver
+usuario=root
+contrasena=

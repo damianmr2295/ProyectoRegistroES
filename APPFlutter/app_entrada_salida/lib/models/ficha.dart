@@ -59,4 +59,7 @@ class Ficha {
   setFichado(bool estado){
     fichado = estado;
   }
+  setFecha(String fechaActual){
+    fecha = fechaActual;
+  }
 }

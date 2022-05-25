@@ -19,6 +19,8 @@ class FlechaCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     DateTime fechaDate = DateTime.parse(fecha);
+    int diaSemana = fechaDate.weekday;
+    
     var column = Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
@@ -89,4 +91,11 @@ class _CardBackground extends StatelessWidget {
           ),
         ));
   }
+}
+
+
+String fechaDelHorario(){
+
+
+return "2022-05-24";
 }

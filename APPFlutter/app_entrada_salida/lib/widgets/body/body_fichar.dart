@@ -1,4 +1,5 @@
 import 'dart:ui';
+import 'package:app_entrada_salida/models/ficha.dart';
 import 'package:intl/intl.dart';
 import 'package:app_entrada_salida/providers/proyecto_providers.dart';
 import 'package:flutter/cupertino.dart';
@@ -26,12 +27,75 @@ class bodyFicharPageState extends State<bodyFichar> {
           Column(
             children: [
               const Divider(),
+              DiaHoy(),
               crearFicha(),
             ],
           ),
           const Divider(),
         ],
       ),
+    );
+  }
+
+  Widget DiaHoy() {
+    final fichasProvider = proyectoProvider();
+    Future<List<Ficha>> fichas = fichasProvider.getinfoFichar();
+    return FutureBuilder(
+        future: fichas,
+        builder: (BuildContext context, AsyncSnapshot<List> snapshot) {
+      if (snapshot.hasData) {
+        return tarjetaDiaSemana(snapshot.data!);
+      } else {
+        return const Center(
+          child: CircularProgressIndicator(),
+        );
+      }
+    });
+  }
+
+  Widget tarjetaDiaSemana(List<dynamic> fichado) {
+    DateTime dia = DateTime.now();
+    int hoyDia = dia.weekday;
+    return Column(
+      children: [
+        ListView.builder(
+            physics: const NeverScrollableScrollPhysics(),
+            shrinkWrap: true,
+            itemCount: 1,
+            itemBuilder: (BuildContext context, int index) {
+              return Container(
+                padding: const EdgeInsets.fromLTRB(50, 10, 50, 0),
+                height: 50,
+                child: Card(
+                    child: GestureDetector(
+                  child: Table(children: [
+                    TableRow(
+                      children: [
+                        
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Row(
+                              children: [
+                                Text(
+                                  "         " +
+                                      DateFormat('yyyy-MM-dd')
+                                          .format(DateTime.now()) +
+                                      "        ",
+                                  style: TextStyle(
+                                      color: Colors.blue, fontSize: 25),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ]),
+                )),
+              );
+            }),
+      ],
     );
   }
 
@@ -54,7 +118,7 @@ class bodyFicharPageState extends State<bodyFichar> {
   Widget tarjetaFicha(List<dynamic> fichado) {
     final fichasProvider = proyectoProvider();
     DateTime dia = DateTime.now();
-    String fechaActual = DateFormat('yyyy-MM-dd').format(dia);
+    int hoyDia = dia.weekday;
     return Column(
       children: [
         ListView.builder(
@@ -65,16 +129,18 @@ class bodyFicharPageState extends State<bodyFichar> {
               bool est = fichado[index].getFichado();
               String hora = fichado[index].getHorario().getHoraInicio();
               hora += "/ " + fichado[index].getHorario().getHoraFin();
-              String fecha = fichado[index].getFecha();
+              int diaSemana = fichado[index].getHorario().getDiaSemana();
               String curso = fichado[index].getHorario().getCurso();
-              if(usuario == fichado[index].getHorario().getUser()){
+              if (usuario == fichado[index].getHorario().getUser()) {
                 if (est) {
-                  if (fecha == fechaActual ) {
-                    return fichaTrue(fichasProvider, fichado, index, hora, curso);
+                  if (hoyDia == diaSemana) {
+                    return fichaTrue(
+                        fichasProvider, fichado, index, hora, curso);
                   }
                 } else {
-                  if (fecha == fechaActual) {
-                    return fichaFalse(fichasProvider, fichado, index, hora, curso);
+                  if (hoyDia == diaSemana) {
+                    return fichaFalse(
+                        fichasProvider, fichado, index, hora, curso);
                   }
                 }
               }

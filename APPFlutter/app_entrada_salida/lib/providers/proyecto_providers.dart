@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'package:app_entrada_salida/models/ficha.dart';
 import 'package:app_entrada_salida/models/user.dart';
 import 'package:http/http.dart' as http;
+import 'package:intl/intl.dart';
 
 class proyectoProvider {
   final String urlmain = '192.168.1.137:8080';
@@ -34,6 +35,7 @@ class proyectoProvider {
       est = true;
     }
     ficha.setFichado(est);
+    ficha.setFecha(DateFormat('yyyy-MM-dd').format(DateTime.now()));
     final String url_peticion = "/ficha/modificar/$idFicha";
     final url = Uri.http(urlmain, url_peticion);
     await http.put(url,
