@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
@@ -27,7 +28,7 @@ public class HorarioServiceImpl implements HorarioService {
     }
 
     @Override
-    public Set<Horario> findByCurso(String curso) {
-        return horarioRepository.findByCurso(curso);
+    public List<Horario> findByDiaSemana(int diaSemana) {
+        return horarioRepository.findByDiaSemana(diaSemana);
     }
 }

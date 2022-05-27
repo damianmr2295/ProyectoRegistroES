@@ -59,13 +59,13 @@ class bodyHorarioPageState extends State<HorarioPage> {
   }
 
   Widget crearBody() {
-    final fichasProvider = proyectoProvider();
-    Future<List<Ficha>> fichas = fichasProvider.getinfoFichar();
+    final horarioProvider = proyectoProvider();
+    Future<List<Horario>> horario = horarioProvider.getHorarioDia(widget.fechaHorario!.weekday);
     return FutureBuilder(
-        future: fichas,
+        future: horario,
         builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
           if (snapshot.hasData) {
-              return tarjetaFicha(snapshot.data!);
+              return tarjetaFicha(snapshot.data);
           } else {
             return const Center(
               child: CircularProgressIndicator(),
@@ -73,25 +73,22 @@ class bodyHorarioPageState extends State<HorarioPage> {
           }
         });
   }
-  Widget tarjetaFicha(List<dynamic> fichas) {
-  final fichasProvider = proyectoProvider();
+  Widget tarjetaFicha(List<dynamic> horario) {
     int hoyDia = widget.fechaHorario!.weekday;
     return Column(
       children: [
         ListView.builder(
             physics: const NeverScrollableScrollPhysics(),
             shrinkWrap: true,
-            itemCount: fichas.length,
+            itemCount: horario.length,
             itemBuilder: (BuildContext context, int index) {
-              bool est = fichas[index].getFichado();
-              String hora = fichas[index].getHorario().getHoraInicio();
-              hora += "/ " + fichas[index].getHorario().getHoraFin();
-              String curso = fichas[index].getHorario().getCurso();
-              int diaSemana = fichas[index].getHorario().getDiaSemana();
+              String hora = horario[index].getHoraInicio()+ "/ " + horario[index].getHoraFin();
+              String curso = horario[index].getCurso();
+              int diaSemana = horario[index].getDiaSemana();
 
-              if(widget.usuario == fichas[index].getHorario().getUser()){
+              if(widget.dni == horario[index].getUser()){
                 if (hoyDia == diaSemana ) {
-                  return fichasDiaria(fichasProvider, fichas, index, hora, curso);
+                  return fichasDiaria(index, hora, curso);
                 }
               }
               return Container();
@@ -99,8 +96,7 @@ class bodyHorarioPageState extends State<HorarioPage> {
       ],
     );
   }
-  Container fichasDiaria(proyectoProvider fichasProvider, List<dynamic> fichado,
-      int index, String hora, String curso) {
+  Container fichasDiaria(int index, String hora, String curso) {
     return Container(
       padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
       height: 70,

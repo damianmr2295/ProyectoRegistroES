@@ -34,6 +34,15 @@ class Ficha {
     horario = (Horario.fromJson(json['horario']));
   }
 
+  Ficha.fromJson(dynamic json) {
+    idFicha = json['idFicha'];
+    fecha = json['fecha'];
+    fichado = json['fichado'];
+    horario = (Horario.fromJson(json['horario']));
+  }
+
+
+
   int? getIdFicha(){
     return idFicha;
   }

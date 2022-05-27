@@ -1,11 +1,12 @@
 import 'dart:convert';
 import 'package:app_entrada_salida/models/ficha.dart';
+import 'package:app_entrada_salida/models/horario.dart';
 import 'package:app_entrada_salida/models/user.dart';
 import 'package:http/http.dart' as http;
 import 'package:intl/intl.dart';
 
 class proyectoProvider {
-  final String urlmain = '192.168.1.137:8080';
+  final String urlmain = '192.168.1.134:8080';
 
   Future<List<Ficha>> getinfoFichar() async {
     const String url_peticion = "/ficha/";
@@ -52,5 +53,41 @@ class proyectoProvider {
     final user = User.fromJson(decodedData);
     return user;
   }
+  Future<List<Horario>> getHorarioDia(int dia) async {
+    const String url_peticion = "/horario/diaSemana/";
+    final url = Uri.http(urlmain, url_peticion+"{diaSemana}", {"diaSemana" : "$dia"});
+    final resp = await http.get(url);
+    var decodedData = json.decode(resp.body);
+    final listaHorario = Horarios.fromJsonList(decodedData);
 
+    return listaHorario.items;
+  }
+
+
+ Future<List<Ficha>> getFichasDiaHorario(int dia) async {
+    const String url_peticion = "/horario/diaSemana/";
+    final url = Uri.http(urlmain, url_peticion+"{diaSemana}", {"diaSemana" : "$dia"});
+    final resp = await http.get(url);
+    var decodedData = json.decode(resp.body);
+    final listaHorario = Horarios.fromJsonList(decodedData);
+    List<Horario>? horarios =  listaHorario.items;
+    dynamic fichas = []; 
+
+
+    for(var i = 0; i< horarios.length; i++) {
+
+      int? x = horarios[i].getIdHorario(); 
+      String urlPeticion = "/ficha/idHorario/$x";
+
+      final urlFichas = Uri.http(urlmain, urlPeticion );
+      final respFicha = await http.get(urlFichas);
+      var decodedDataFicha = json.decode(respFicha.body);
+
+      final listaFichas = Ficha.fromJson(decodedDataFicha);
+    }
+
+    dynamic devolverListFichas = getUltimaConexion(DateFormat('yyyy-MM-dd').format(DateTime.now()));
+
+    return devolverListFichas;
+  }
 }

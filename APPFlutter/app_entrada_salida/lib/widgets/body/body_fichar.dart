@@ -6,17 +6,17 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class bodyFichar extends StatefulWidget {
-  String? usuario;
-  bodyFichar(this.usuario);
+  String? nombreUser;
+  String? dniUser;
+  bodyFichar(this.nombreUser, this.dniUser);
   @override
   State<bodyFichar> createState() {
-    return bodyFicharPageState(usuario);
+    return bodyFicharPageState();
   }
 }
 
 class bodyFicharPageState extends State<bodyFichar> {
-  String? usuario;
-  bodyFicharPageState(this.usuario);
+  bodyFicharPageState();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,7 +44,7 @@ class bodyFicharPageState extends State<bodyFichar> {
         future: fichas,
         builder: (BuildContext context, AsyncSnapshot<List> snapshot) {
       if (snapshot.hasData) {
-        return tarjetaDiaSemana(snapshot.data!);
+        return tarjetaDiaSemana();
       } else {
         return const Center(
           child: CircularProgressIndicator(),
@@ -53,9 +53,7 @@ class bodyFicharPageState extends State<bodyFichar> {
     });
   }
 
-  Widget tarjetaDiaSemana(List<dynamic> fichado) {
-    DateTime dia = DateTime.now();
-    int hoyDia = dia.weekday;
+  Widget tarjetaDiaSemana() {
     return Column(
       children: [
         ListView.builder(
@@ -71,7 +69,6 @@ class bodyFicharPageState extends State<bodyFichar> {
                   child: Table(children: [
                     TableRow(
                       children: [
-                        
                         Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
@@ -82,7 +79,7 @@ class bodyFicharPageState extends State<bodyFichar> {
                                       DateFormat('yyyy-MM-dd')
                                           .format(DateTime.now()) +
                                       "        ",
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                       color: Colors.blue, fontSize: 25),
                                 ),
                               ],
@@ -101,9 +98,9 @@ class bodyFicharPageState extends State<bodyFichar> {
 
   Widget crearFicha() {
     final fichasProvider = proyectoProvider();
-
+    int dia = DateTime.now().weekday;
     return FutureBuilder(
-        future: fichasProvider.getinfoFichar(),
+        future: fichasProvider.getFichasDiaHorario(dia),
         builder: (BuildContext context, AsyncSnapshot<List> snapshot) {
           if (snapshot.hasData) {
             return tarjetaFicha(snapshot.data!);
@@ -115,8 +112,9 @@ class bodyFicharPageState extends State<bodyFichar> {
         });
   }
 
-  Widget tarjetaFicha(List<dynamic> fichado) {
+  Widget tarjetaFicha(List<dynamic> fichas) {
     final fichasProvider = proyectoProvider();
+    bool est = false;
     DateTime dia = DateTime.now();
     int hoyDia = dia.weekday;
     return Column(
@@ -124,23 +122,23 @@ class bodyFicharPageState extends State<bodyFichar> {
         ListView.builder(
             physics: const NeverScrollableScrollPhysics(),
             shrinkWrap: true,
-            itemCount: fichado.length,
+            itemCount: fichas.length,
             itemBuilder: (BuildContext context, int index) {
-              bool est = fichado[index].getFichado();
-              String hora = fichado[index].getHorario().getHoraInicio();
-              hora += "/ " + fichado[index].getHorario().getHoraFin();
-              int diaSemana = fichado[index].getHorario().getDiaSemana();
-              String curso = fichado[index].getHorario().getCurso();
-              if (usuario == fichado[index].getHorario().getUser()) {
+              String hora = fichas[index].getHorario().getHoraInicio() + "/ " + fichas[index].getHorario().getHoraFin();
+              int diaSemana = fichas[index].getHorario().getDiaSemana();
+              String curso = fichas[index].getHorario().getCurso();
+              bool est = fichas[index].getFichado();
+              if (widget.dniUser == fichas[index].getHorario().getUser()) {
                 if (est) {
                   if (hoyDia == diaSemana) {
                     return fichaTrue(
-                        fichasProvider, fichado, index, hora, curso);
+                        fichasProvider, fichas, index, hora, curso);
                   }
                 } else {
                   if (hoyDia == diaSemana) {
+                    
                     return fichaFalse(
-                        fichasProvider, fichado, index, hora, curso);
+                        fichasProvider, fichas, index, hora, curso);
                   }
                 }
               }
@@ -206,4 +204,24 @@ class bodyFicharPageState extends State<bodyFichar> {
           )),
     );
   }
+}
+
+
+
+bool fichaExiste(List<dynamic> horario) {
+  DateTime dia = DateTime.now();  
+ final fichasProvider = proyectoProvider();
+    Future<List<Ficha>> fichas = fichasProvider.getinfoFichar();
+    
+  for(var i = 0; i< horario.length; i++) {
+
+
+
+
+
+    
+  }
+
+
+  return false; 
 }

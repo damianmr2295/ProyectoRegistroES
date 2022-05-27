@@ -13,4 +13,5 @@ public interface FichaService {
     Optional<Ficha> findById(long id);
     List<Ficha> findByFecha(LocalDate fecha);
     Ficha fichaModify(long id, Ficha newFicha);
+    Ficha findByIdHorario(long id);
 }

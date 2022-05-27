@@ -1,6 +1,7 @@
 package com.iesmz.proyectofinal.dmr.controller;
 
 import com.iesmz.proyectofinal.dmr.domain.Horario;
+import com.iesmz.proyectofinal.dmr.domain.User;
 import com.iesmz.proyectofinal.dmr.exception.HorarioNotFoundException;
 import com.iesmz.proyectofinal.dmr.service.HorarioService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -13,6 +14,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Set;
 
 @RestController
@@ -20,6 +22,7 @@ public class HorarioController {
 
     @Autowired
     private HorarioService horarioService;
+
     @Operation(summary="Obtiene un horario por su Id")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "600", description = "El horario existe",
@@ -34,8 +37,27 @@ public class HorarioController {
 
         Horario horario = horarioService.findById(id)
                 .orElseThrow(() -> new HorarioNotFoundException(id));
-        return new ResponseEntity<Horario>(horario, HttpStatus.OK);
+        return new ResponseEntity<>(horario, HttpStatus.OK);
     }
+
+
+    @Operation(summary="Obtiene una lista de horarios por el dia de la semana")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "600", description = "El horario existe",
+                    content = @Content(schema = @Schema(implementation =
+                            Horario.class))),
+            @ApiResponse(responseCode = "404", description = "El horario no existe",
+                    content = @Content(schema = @Schema(implementation =
+                            Horario.class)))
+    })
+    @GetMapping( value = "/horario/diaSemana/{diaSemana}", produces = "application/json")
+    public ResponseEntity<List<Horario>> getHorarioDiaSemana(@RequestParam(value =
+            "diaSemana", defaultValue = "") int diaSemana) {
+        List<Horario> horarios = null;
+        horarios = horarioService.findByDiaSemana(diaSemana);
+        return new ResponseEntity<>(horarios, HttpStatus.OK);
+    }
+
 
     @Operation(summary = "Obtiene todos el horario")
     @ApiResponses(value = {

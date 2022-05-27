@@ -12,4 +12,5 @@ public interface FichaRepository extends CrudRepository<Ficha, Long> {
     Set<Ficha> findAll();
     Optional<Ficha> findById(long id);
     List<Ficha> findByFecha(LocalDate fecha);
+
 }

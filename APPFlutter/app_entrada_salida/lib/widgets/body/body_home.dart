@@ -33,7 +33,7 @@ class bodyFicharPageState extends State<bodyHome> {
           Column(
             children: [
               const Divider(),
-              crearBody(usuario),
+              crearBody(),
             ],
           ),
           const Divider(),
@@ -42,14 +42,14 @@ class bodyFicharPageState extends State<bodyHome> {
     );
   }
 
-  Widget crearBody(String? usuario) {
+  Widget crearBody() {
     final fichasProvider = proyectoProvider();
     Future<List<Ficha>> fichas = fichasProvider.getinfoFichar();
     return FutureBuilder(
         future: fichas,
         builder: (BuildContext context, AsyncSnapshot<List> snapshot) {
           if (snapshot.hasData) {
-            return tarjetaFicha(snapshot.data!, usuario);
+            return tarjetaFicha(snapshot.data!);
           } else {
             return const Center(
               child: CircularProgressIndicator(),
@@ -58,9 +58,9 @@ class bodyFicharPageState extends State<bodyHome> {
         });
   }
 
-  Widget tarjetaFicha(List<dynamic> fichas, String? usuario) {
-    String ultConex = ultimaDiaFichado(fichas, usuario);
-    String fichado = hasFichado(fichas, usuario);
+  Widget tarjetaFicha(List<dynamic> fichas) {
+    String ultConex = ultimaDiaFichado(fichas, dni);
+    String fichado = hasFichado(fichas, dni);
     return Column(
       children: [
         ListView.builder(
@@ -180,17 +180,20 @@ DateTime devolverFecha(DateTime fecha) {
   return fechaRestada;
 }
 
-String ultimaDiaFichado(List<dynamic> fichas, String? usuario) {
+String ultimaDiaFichado(List<dynamic> fichas, String? dni) {
   String conexion = "No hay conexión";
   DateTime dia = DateTime.now().subtract(const Duration(days: 8));
   String diaSemana;
   int index = 0;
   do {
+
     dia = devolverFecha(dia);
     diaSemana = DateFormat('yyyy-MM-dd').format(dia);
       for (int i = 0; i < fichas.length; i++) {
+        print("ESTAMOS EN EL FOR $diaSemana");
+
         if ((diaSemana == fichas[i].getFecha()) &&
-            (fichas[i].getFichado() == true) && usuario == fichas[i].getHorario().getUser()) {
+            (fichas[i].getFichado() == true) && dni == fichas[i].getHorario().getUser()) {
           conexion = fichas[i].getFecha();
         }
       }
@@ -200,14 +203,14 @@ String ultimaDiaFichado(List<dynamic> fichas, String? usuario) {
   return conexion;
 }
 
-String hasFichado(List<dynamic> fichas, String? usuario) {
+String hasFichado(List<dynamic> fichas, String? dni) {
   String fichado = "Hoy no has fichado";
   String diaSemana = DateFormat('yyyy-MM-dd').format(DateTime.now());
   int index = 0;
   do {
     for (int i = 0; i < fichas.length; i++) {
       if ((diaSemana == fichas[i].getFecha()) &&
-          (fichas[i].getFichado() == true && usuario == fichas[i].getHorario().getUser())) {
+          (fichas[i].getFichado() == true && dni == fichas[i].getHorario().getUser())) {
         fichado = "Has fichado";
       }
     }

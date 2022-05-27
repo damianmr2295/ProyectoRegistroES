@@ -109,10 +109,11 @@ Widget botonEnter(BuildContext context, TextEditingController user,
       color: Colors.blueAccent,
       padding: const EdgeInsets.symmetric(horizontal: 100, vertical: 10),
       onPressed: () async {
-        const String urlmain = '192.168.1.137:8080';
+        const String urlmain = '192.168.1.134:8080';
         const String urlPeticion = "/user/dni/";
         final url =
             Uri.http(urlmain, urlPeticion + "{dni}", {"dni": user.text});
+            print(url);
         final resp = await http.get(url);
 
         if(resp.body.isNotEmpty){

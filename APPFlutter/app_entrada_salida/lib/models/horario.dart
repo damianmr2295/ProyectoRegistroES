@@ -40,8 +40,8 @@ class Horario {
     diaSemana = json['diaSemana'];
     curso = json['curso'];
     horaFin = json['horaFin'];
-    aula = json['aula'];
-    user = json['user'];
+    aula = (Aula.fromJson(json['aula']));
+    user = (User.fromJson(json['user']));
   }
     Horario.fromJson(dynamic json) {
     idHorario = json['idHorario'];
@@ -73,7 +73,7 @@ class Horario {
     return aula!.getIdAula();
   }
   String? getUser(){
-    return user!.getNombre();
+    return user!.getDni();
   }
   String toString() {
     return "{" +

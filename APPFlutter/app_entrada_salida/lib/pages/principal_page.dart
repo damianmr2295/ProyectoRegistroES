@@ -34,7 +34,7 @@ class _principalPageState extends State<principalPage> {
         physics: NeverScrollableScrollPhysics(),
         children: [ 
         bodyHome(widget.userNombre, widget.userDni),
-        bodyFichar(widget.userNombre),
+        bodyFichar(widget.userNombre, widget.userDni),
         bodyPerfil(widget.userDni),
         ],
       ),

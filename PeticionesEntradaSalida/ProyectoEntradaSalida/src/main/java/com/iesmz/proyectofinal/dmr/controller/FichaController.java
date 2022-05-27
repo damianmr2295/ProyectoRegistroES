@@ -17,6 +17,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Optional;
 import java.util.Set;
 
 @RestController
@@ -32,7 +33,7 @@ public class FichaController {
                     Response.class)))
     })
     @GetMapping( value = "/ficha/", produces = "application/json")
-    public ResponseEntity<Set<Ficha>> getAllMesa() {
+    public ResponseEntity<Set<Ficha>> getAllFicha() {
         Set<Ficha> ficha=null;
         ficha = fichaService.findAll();
         return new ResponseEntity<>(ficha, HttpStatus.OK);
@@ -71,6 +72,24 @@ public class FichaController {
         fichas = fichaService.findByFecha(fecha);
         return new ResponseEntity<>(fichas, HttpStatus.OK);
     }
+
+    @Operation(summary="Obtiene una ficha por su el id del horario")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "600", description = "La ficha existe",
+                    content = @Content(schema = @Schema(implementation =
+                            Ficha.class))),
+            @ApiResponse(responseCode = "604", description = "La ficha no existe",
+                    content = @Content(schema = @Schema(implementation =
+                            Ficha.class)))
+    })
+    @GetMapping( value = "/ficha/idHorario/{id}", produces = "application/json")
+    public ResponseEntity<Ficha> getFichaIdHorario(@PathVariable long id) {
+
+        Ficha ficha = fichaService.findByIdHorario(id);
+
+        return new ResponseEntity<Ficha>(ficha, HttpStatus.OK);
+    }
+
     @Operation(summary = "Modifica una ficha")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Se modifica la ficha",
