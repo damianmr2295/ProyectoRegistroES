@@ -46,7 +46,7 @@ public class FichaServiceImpl implements FichaService {
         Ficha fichaIdHorario = new Ficha();
         boolean noExiste = false;
         for (Ficha f:fichas) {
-            if (f.getHorario().getIdHorario() == id) {
+            if (f.getHorario().getIdHorario() == id && f.getFecha().equals(LocalDate.now())) {
                 fichaIdHorario = f;
                 noExiste = true;
             }

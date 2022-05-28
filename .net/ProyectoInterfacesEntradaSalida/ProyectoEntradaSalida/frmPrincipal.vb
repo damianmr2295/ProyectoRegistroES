@@ -4,6 +4,7 @@ Imports System.Net
 Public Class frmPrincipal
     Dim restApi = New RestAPI
     Private Sub btnCerrarSesion_Click(sender As Object, e As EventArgs) Handles btnCerrarSesion.Click
+        Application.Restart()
         frmPrincipal.ActiveForm.Hide()
         frmLogin.Show()
         frmLogin.txtUser.Clear()

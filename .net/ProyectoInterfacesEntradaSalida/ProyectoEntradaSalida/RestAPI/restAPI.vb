@@ -71,4 +71,31 @@ Public Class RestAPI
 
         Return fichas
     End Function
+
+    Function horaHorario(diaHoy As Integer) As List(Of Horario)
+        Dim api = New DBApi
+        Dim url As String = "http://localhost:8080/horario/diaSemana/{diaSemana}?diaSemana=" & diaHoy
+        Dim headers = New List(Of Parametro)
+        Dim parametros = New List(Of Parametro)
+
+        Dim response = api.MGet(url, headers, parametros)
+
+        Dim horarios As List(Of Horario) = JsonConvert.DeserializeObject(Of List(Of Horario))(response)
+
+        Return horarios
+    End Function
+
+    Function fichasDiarias(idHorario As Integer) As Ficha
+        Dim api = New DBApi
+        Dim url As String = "http://localhost:8080/ficha/idHorario/" & idHorario
+        Dim headers = New List(Of Parametro)
+        Dim parametros = New List(Of Parametro)
+
+        Dim response = api.MGet(url, headers, parametros)
+
+        Dim fichas As Ficha = JsonConvert.DeserializeObject(Of Ficha)(response)
+
+        Return fichas
+    End Function
+
 End Class

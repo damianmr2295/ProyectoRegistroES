@@ -19,9 +19,21 @@ Public Class frmFichar
         Dim user = restApi.userDni()
 
         labelDiaActual.Text = Format(fechaActual, "dd/MM/yyyy")
-        Dim fichas = restApi.fichaHorario(fechaActual)
+
+        Dim horarioHoy As List(Of Horario) = restApi.horaHorario(fechaActual.DayOfWeek)
+        Dim listaFichas As List(Of Ficha) = New List(Of Ficha)
+
+        For Each horario As Horario In horarioHoy
+            If horario.user.dni.Equals(user.dni) Then
+                Dim ficha = restApi.fichasDiarias(horario.idHorario)
+                listaFichas.Add(ficha)
+
+            End If
+        Next
+
+
         labelUsuario.Text = "Usuario: " + user.nombre
-        For Each ficha As Ficha In fichas
+        For Each ficha As Ficha In listaFichas
             If ficha.horario.user.dni.Equals(user.dni) Then
 
                 listaLabel(cont).Text = "Inicio: " + ficha.horario.horaInicio + " || Fin: " + ficha.horario.horaFin + " || Aula: " + ficha.horario.aula.nombre
@@ -212,5 +224,4 @@ Public Class frmFichar
         listaButton.Add(btnFichar10)
         Return listaButton
     End Function
-
 End Class

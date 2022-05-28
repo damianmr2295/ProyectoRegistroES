@@ -33,10 +33,12 @@ Widget cuerpo(BuildContext context) {
           "https://alicanteplaza.es/public/Image/2021/4/231cf275f69d71fc28d0b7085776ce191_NoticiaAmpliada.jpg"),
       fit: BoxFit.fill,
     )),
+    
     child: Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
+          
           imagen(),
           const SizedBox(
             height: 70,
@@ -47,7 +49,7 @@ Widget cuerpo(BuildContext context) {
           const SizedBox(
             height: 50,
           ),
-          botonEnter(context, user, password)
+          botonEnter(context, user, password),
         ],
       ),
     ),
@@ -65,7 +67,7 @@ Widget nombre() {
   return const Text(
     "Sing in",
     style: TextStyle(
-        color: Colors.lightBlueAccent,
+        color: Colors.blue,
         fontSize: 35,
         fontWeight: FontWeight.bold),
   );
@@ -154,3 +156,9 @@ bool comprobarUsuario(String user, String password, String? pass) {
   }
   return false;
 }
+
+  Widget _banner() {
+    return (Image(
+      image: AssetImage('assets/img/logotipo.png'),
+    ));
+  }

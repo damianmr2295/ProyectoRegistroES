@@ -36,7 +36,7 @@ Partial Class frmHorario
         Me.imgCabeceraMZ.ErrorImage = CType(resources.GetObject("imgCabeceraMZ.ErrorImage"), System.Drawing.Image)
         Me.imgCabeceraMZ.Location = New System.Drawing.Point(1, -1)
         Me.imgCabeceraMZ.Name = "imgCabeceraMZ"
-        Me.imgCabeceraMZ.Size = New System.Drawing.Size(873, 115)
+        Me.imgCabeceraMZ.Size = New System.Drawing.Size(962, 115)
         Me.imgCabeceraMZ.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.imgCabeceraMZ.TabIndex = 2
         Me.imgCabeceraMZ.TabStop = False
@@ -47,7 +47,7 @@ Partial Class frmHorario
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Location = New System.Drawing.Point(12, 204)
         Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(847, 390)
+        Me.DataGridView1.Size = New System.Drawing.Size(862, 483)
         Me.DataGridView1.TabIndex = 22
         '
         'btnAtras
@@ -73,7 +73,7 @@ Partial Class frmHorario
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(871, 654)
+        Me.ClientSize = New System.Drawing.Size(962, 699)
         Me.Controls.Add(Me.labelUsuario)
         Me.Controls.Add(Me.btnAtras)
         Me.Controls.Add(Me.DataGridView1)

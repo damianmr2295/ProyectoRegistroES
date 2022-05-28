@@ -130,9 +130,9 @@ Partial Class frmFichar
         Me.labelIniFinAula1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.labelIniFinAula1.Location = New System.Drawing.Point(94, 162)
         Me.labelIniFinAula1.Name = "labelIniFinAula1"
-        Me.labelIniFinAula1.Size = New System.Drawing.Size(195, 20)
+        Me.labelIniFinAula1.Size = New System.Drawing.Size(224, 20)
         Me.labelIniFinAula1.TabIndex = 10
-        Me.labelIniFinAula1.Text = "Hora inicio / Hora fin / Aula"
+        Me.labelIniFinAula1.Text = "No tienes nada para fichar hoy"
         '
         'labelIniFinAula5
         '

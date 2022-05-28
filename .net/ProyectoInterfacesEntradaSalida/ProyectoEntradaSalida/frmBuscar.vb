@@ -72,17 +72,19 @@ Public Class frmBuscar
             DataGridView1.Columns.Add("nombre", "Nombre")
             DataGridView1.Columns.Add("estado", "Estado")
             Dim aula = restApi.aulaNombre(txtNombre.Text)
-            For Each horario As Horario In aula.horarios
-                If comBoxHoraInic.Text.Equals(horario.horaInicio + " - " + horario.horaFin) Then
-                    ocupado = True
+            If aula IsNot Nothing Then
+                For Each horario As Horario In aula.horarios
+                    If comBoxHoraInic.Text.Equals(horario.horaInicio + " - " + horario.horaFin) Then
+                        ocupado = True
+                    End If
+                Next
+                If ocupado Then
+                    DataGridView1.Rows.Add(aula.nombre, "Ocupado")
+                Else
+                    DataGridView1.Rows.Add(aula.nombre, "Libre")
                 End If
-            Next
-            If ocupado Then
-                DataGridView1.Rows.Add(aula.nombre, "Ocupado")
-            Else
-                DataGridView1.Rows.Add(aula.nombre, "Libre")
+                ocupado = False
             End If
-            ocupado = False
         End If
     End Sub
 
