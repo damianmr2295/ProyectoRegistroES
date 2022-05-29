@@ -115,7 +115,6 @@ Widget botonEnter(BuildContext context, TextEditingController user,
         const String urlPeticion = "/user/dni/";
         final url =
             Uri.http(urlmain, urlPeticion + "{dni}", {"dni": user.text});
-            print(url);
         final resp = await http.get(url);
 
         if(resp.body.isNotEmpty){

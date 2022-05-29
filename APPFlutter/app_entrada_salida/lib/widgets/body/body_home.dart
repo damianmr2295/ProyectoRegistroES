@@ -190,7 +190,6 @@ String ultimaDiaFichado(List<dynamic> fichas, String? dni) {
     dia = devolverFecha(dia);
     diaSemana = DateFormat('yyyy-MM-dd').format(dia);
       for (int i = 0; i < fichas.length; i++) {
-        print("ESTAMOS EN EL FOR $diaSemana");
 
         if ((diaSemana == fichas[i].getFecha()) &&
             (fichas[i].getFichado() == true) && dni == fichas[i].getHorario().getUser()) {

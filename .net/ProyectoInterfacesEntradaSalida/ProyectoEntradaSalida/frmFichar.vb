@@ -20,8 +20,9 @@ Public Class frmFichar
 
         labelDiaActual.Text = Format(fechaActual, "dd/MM/yyyy")
 
-        Dim horarioHoy As List(Of Horario) = restApi.horaHorario(fechaActual.DayOfWeek)
+        Dim horarioHoy As List(Of Horario) = restApi.horaHorario(fechaActual.DayOfWeek + 7)
         Dim listaFichas As List(Of Ficha) = New List(Of Ficha)
+
 
         For Each horario As Horario In horarioHoy
             If horario.user.dni.Equals(user.dni) Then
@@ -30,7 +31,6 @@ Public Class frmFichar
 
             End If
         Next
-
 
         labelUsuario.Text = "Usuario: " + user.nombre
         For Each ficha As Ficha In listaFichas
