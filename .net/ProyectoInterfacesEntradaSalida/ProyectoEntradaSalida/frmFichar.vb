@@ -20,7 +20,7 @@ Public Class frmFichar
 
         labelDiaActual.Text = Format(fechaActual, "dd/MM/yyyy")
 
-        Dim horarioHoy As List(Of Horario) = restApi.horaHorario(fechaActual.DayOfWeek + 7)
+        Dim horarioHoy As List(Of Horario) = restApi.horaHorario(fechaActual.DayOfWeek)
         Dim listaFichas As List(Of Ficha) = New List(Of Ficha)
 
 
